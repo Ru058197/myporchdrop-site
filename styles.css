@@ -1,0 +1,372 @@
+:root{
+  --bg:#fbfaf8;
+  --text:#0d0a14;
+  --white:#ffffff;
+  --accent:#1d828d;
+  --accent2:#ffaf5e;
+  --muted:rgba(13,10,20,.72);
+  --border:rgba(13,10,20,.12);
+  --shadow:0 12px 30px rgba(0,0,0,.10);
+  --radius:18px;
+}
+
+*{ box-sizing:border-box; }
+html, body{ margin:0; padding:0; }
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:18px;
+}
+
+.section{
+  margin:18px auto;
+}
+
+.img-card{
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.img-card img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* SUPPORTERS (overlay inside teal area) */
+.support-shell{
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+
+.support-bg{
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+.support-bg img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Overlay layer sitting ON TOP of the background image */
+.support-overlay{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+/* Left panel area (matches teal zone) */
+.support-panel{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 52%;
+  height: 100%;
+  padding: 18px 16px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap: 12px;
+  pointer-events:auto;
+}
+
+/* Heading inside panel */
+.support-head{
+  color: var(--white);
+  font-weight: 1000;
+  line-height:1.1;
+  margin: 0;
+  font-size: 36px;
+  text-shadow: 0 2px 10px rgba(0,0,0,.20);
+}
+.support-head .hi{
+  color: var(--accent2);
+}
+
+.support-sub{
+  color: rgba(255,255,255,.92);
+  font-weight: 800;
+  margin: 0;
+  font-size: 18px;
+  text-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+
+/* Tier cards stacked inside the teal panel */
+.support-tier{
+  background: rgba(255,255,255,.98);
+  border: 2px solid rgba(255,175,94,.85);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.support-tier h4{
+  margin:0 0 6px;
+  font-size: 16px;
+  font-weight: 1000;
+  color: var(--accent);
+}
+
+.support-tier ul{
+  margin:0 0 0 18px;
+  padding:0;
+  color: rgba(13,10,20,.80);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* CTA band (single button only) */
+.support-cta{
+  padding: 16px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  background: var(--white);
+}
+
+.btn{
+  display:inline-block;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 1000;
+  text-decoration:none;
+  background: var(--accent);
+  color: var(--white);
+  border: 1px solid transparent;
+}
+
+.small{
+  margin-top:10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Responsive: on small screens, don’t overlay; stack tiers below image */
+/* Only switch to stacked layout on small phones */
+@media (max-width: 520px){
+  .support-overlay{ display:none; }
+  .support-mobile{
+    padding: 16px;
+    display:grid;
+    gap: 12px;
+    background: var(--white);
+    border-top:1px solid var(--border);
+  }
+}
+
+/* Default: hide the mobile fallback */
+.support-mobile{
+  display:none;
+}
+
+  }
+  .support-mobile h3{
+    margin:0;
+    font-size: 20px;
+    font-weight: 1000;
+    color: var(--text);
+  }
+  .support-mobile p{
+    margin:0;
+    color: var(--muted);
+    font-weight: 700;
+  }
+}
+
+/* HOW IT WORKS (hybrid) */
+.how-card{
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  padding: 18px;
+}
+
+.how-grid{
+  display:grid;
+  gap: 18px;
+  align-items:center;
+}
+
+@media(min-width:900px){
+  .how-grid{ grid-template-columns: 0.9fr 1.1fr; }
+}
+
+.how-phone img{
+  width:100%;
+  max-width: 320px;
+  display:block;
+  margin:0 auto;
+  border-radius: 16px;
+}
+
+.how-title{
+  font-size: 34px;
+  font-weight: 1000;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+.how-title span{ color: var(--accent2); }
+
+.how-steps{
+  display:grid;
+  gap: 12px;
+}
+
+.how-step{
+  display:grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items:start;
+}
+
+.how-bubble{
+  width:46px;
+  height:46px;
+  border-radius:999px;
+  background: var(--accent);
+  color: var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 1000;
+  font-size: 18px;
+}
+
+.how-text{
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text);
+  line-height:1.2;
+}
+
+.how-text .hi{ color: var(--accent2); }
+
+.how-tagline{
+  margin-top: 16px;
+  font-size: 26px;
+  font-weight: 1000;
+  color: var(--accent);
+}
+.how-tagline .hi{ color: var(--accent2); }
+
+/* TESTIMONIALS (rebuilt) */
+.t-band{
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+
+.t-header{
+  background: var(--accent2);
+  padding: 18px 16px;
+  text-align: center;
+  font-weight: 1000;
+  font-size: 28px;
+  color: var(--white);
+}
+
+.t-header span{
+  color: var(--accent);
+}
+
+.t-row{
+  padding: 18px 16px 22px;
+  display: grid;
+  gap: 14px;
+}
+
+@media(min-width:900px){
+  .t-row{ grid-template-columns: repeat(3, 1fr); }
+}
+
+.t-card{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 18px 30px rgba(0,0,0,.10);
+  padding: 16px;
+  text-align: center;
+}
+
+.t-quote{
+  font-weight: 900;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.25;
+  min-height: 72px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.t-name{
+  margin-top: 10px;
+  font-weight: 1000;
+  color: var(--accent2);
+}
+
+.t-loc{
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 800;
+}
+/* Extra scaling for wide desktop screens */
+@media (min-width: 1200px){
+
+  .support-panel{
+    width: 58%;
+    padding: 24px 22px;
+  }
+
+  .support-head{
+    font-size: 32px;
+  }
+
+  .support-sub{
+    font-size: 18px;
+  }
+
+  .support-tier{
+    padding: 18px 20px;
+  }
+
+  .support-tier h4{
+    font-size: 18px;
+  }
+
+  .support-tier ul{
+    font-size: 16px;
+    line-height: 1.35;
+  }
+}
+.how-card{
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.how-card{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.wrap.section{
+  margin: 18px auto;
+}
