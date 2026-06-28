@@ -1,13 +1,998 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PorchDrop</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PorchDrop: Delivery Culture, Documented</title>
+<meta name="description" content="The everyday chaos of getting stuff delivered to your door: documented, measured, and occasionally fixed by PorchDrop.">
+<meta property="og:title" content="PorchDrop: Delivery Culture, Documented">
+<meta property="og:description" content="2,000 deliveries later, the problem became obvious. See the data, the footage, and the fix.">
+<meta property="og:image" content="images/porchdrop-social-card.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PorchDrop: Delivery Culture, Documented">
+<meta name="twitter:description" content="2,000 deliveries later, the problem became obvious.">
+<meta name="twitter:image" content="images/porchdrop-social-card.jpg">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<!-- ANALYTICS: paste a privacy-friendly analytics script tag here once you've set one up (e.g. Plausible, Fathom). Recommended before launch so you can see real traffic and form conversion. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#1D828D;
+    --teal-dark:#15636C;
+    --orange:#FFAF5E;
+    --orange-dark:#E8923C;
+    --cream:#FBFAF8;
+    --paper:#F3EFE6;
+    --ink:#19181C;
+    --ink-soft:#4A4950;
+    --peach:#FBDDC0;
+    --rec:#E2553A;
+    --line: rgba(25,24,28,0.12);
+    --radius: 16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;} }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  h1,h2,h3{font-family:'Baloo 2',sans-serif;font-weight:800;line-height:1.08;margin:0;letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal-dark);
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{content:"●";color:var(--rec);font-size:0.6rem;}
+
+  /* ---------- MASTHEAD ---------- */
+  header.masthead{
+    position:sticky;top:0;z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .masthead-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:1180px;margin:0 auto;
+  }
+  .logo-lockup{display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-badge{width:36px;height:36px;border-radius:9px;display:block;object-fit:cover;flex-shrink:0;}
+  .logo{
+    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.6rem;
+    text-decoration:none;letter-spacing:-0.01em;
+  }
+  .logo span{color:var(--orange-dark);}
+  nav.primary{display:flex;align-items:center;gap:28px;}
+  nav.primary a{
+    font-family:'Inter',sans-serif;font-size:0.78rem;text-transform:uppercase;
+    letter-spacing:0.08em;text-decoration:none;color:var(--ink);font-weight:700;
+    padding-bottom:2px;border-bottom:2px solid transparent;
+  }
+  nav.primary a:hover{border-bottom-color:var(--orange);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--orange);color:var(--ink);
+    font-family:'Inter',sans-serif;font-weight:700;font-size:0.92rem;
+    padding:11px 20px;border-radius:999px;text-decoration:none;
+    border:2px solid var(--ink);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:3px 4px 0 var(--ink);}
+  .btn.ghost{background:transparent;border:2px solid var(--ink);}
+  @media (max-width:760px){
+    nav.primary a.nav-link{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 80px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start;
+  }
+  .hero .proof-card{margin-top:6px;}
+  .hero .proof-card img{aspect-ratio:3/4;object-fit:cover;object-position:bottom;}
+  .hero h1{font-size:clamp(2.4rem,4.4vw,3.6rem);margin:18px 0 20px;}
+  .hero h1 mark{background:none;color:var(--teal);}
+  .hero .dek{font-size:1.15rem;color:var(--ink-soft);max-width:520px;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .text-link{
+    font-family:'Inter',sans-serif;font-size:0.85rem;text-decoration:underline;
+    text-decoration-color:var(--orange-dark);font-weight:700;
+  }
+
+  /* ---------- PROOF CARD (signature element) ---------- */
+  .proof-card{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    background:var(--ink);box-shadow:0 14px 30px -10px rgba(25,24,28,0.35);
+  }
+  .proof-card::before{
+    content:"";position:absolute;top:0;left:0;width:34px;height:34px;
+    background:var(--cream);border-radius:0 0 100% 0;z-index:3;
+  }
+  .proof-card::after{
+    content:"";position:absolute;top:7px;left:7px;width:13px;height:13px;
+    border-radius:50%;border:2px solid var(--ink);z-index:4;
+  }
+  .proof-card img{width:100%;height:100%;object-fit:cover;display:block;}
+  .proof-card .rec-tag{
+    position:absolute;top:10px;right:10px;z-index:4;
+    display:flex;align-items:center;gap:5px;
+    background:rgba(25,24,28,0.55);color:#fff;
+    font-family:'Inter',sans-serif;font-size:0.62rem;letter-spacing:0.06em;
+    padding:4px 9px 4px 7px;border-radius:999px;
+  }
+  .rec-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--rec);animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+  .proof-card .stamp{
+    position:absolute;left:0;bottom:0;right:0;z-index:4;
+    background:linear-gradient(0deg, rgba(25,24,28,0.88), rgba(25,24,28,0));
+    color:#fff;padding:26px 16px 12px;
+    font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.04em;
+  }
+  .proof-card .stamp b{display:block;font-size:0.78rem;letter-spacing:0.08em;color:var(--orange);margin-bottom:2px;}
+  .proof-card.is-quote{background:var(--ink);padding:0;}
+  .proof-card.is-quote .stamp-top{
+    position:relative;display:flex;justify-content:space-between;align-items:center;
+    padding:10px 18px 0 40px;
+  }
+  .proof-card.is-quote .stamp-top span{
+    font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.08em;
+    color:var(--orange);text-transform:uppercase;
+  }
+  .proof-card.is-quote blockquote{
+    margin:14px 18px 20px;color:#fff;font-family:'Inter',sans-serif;
+    font-size:1.02rem;line-height:1.6;
+  }
+  .proof-card.is-quote footer{
+    margin:0 18px 18px;font-family:'Inter',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.6);
+  }
+  .proof-card.is-stat{background:var(--paper);}
+  .proof-card.is-stat .stamp-top{padding:10px 18px 0 40px;}
+  .proof-card.is-stat .stamp-top span{
+    font-family:'Inter',sans-serif;font-size:0.68rem;letter-spacing:0.08em;color:var(--teal-dark);text-transform:uppercase;font-weight:700;
+  }
+  .proof-card.is-stat .big{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:2.6rem;color:var(--ink);
+    margin:6px 18px 0;line-height:1;
+  }
+  .proof-card.is-stat p{margin:10px 18px 18px;font-size:0.92rem;color:var(--ink-soft);}
+  .proof-card.is-stat .src{
+    margin:0 18px 16px;font-family:'Inter',sans-serif;font-size:0.65rem;color:var(--ink-soft);opacity:0.7;
+  }
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:78px 0;}
+  section.dark{background:var(--ink);color:var(--cream);}
+  section.dark h1,section.dark h2,section.dark h3{color:#FFFFFF;}
+  .section-head{max-width:680px;margin-bottom:42px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-top:14px;}
+  .section-head p{color:var(--ink-soft);font-size:1.05rem;margin-top:14px;}
+  section.dark .section-head p{color:rgba(255,255,255,0.85);}
+  section.dark .eyebrow{color:var(--orange);}
+  section.dark .eyebrow::before{color:var(--orange);}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .grid-3{grid-template-columns:1fr;}
+    .grid-2{grid-template-columns:1fr;}
+  }
+
+  .photo-card{border-radius:var(--radius);overflow:hidden;position:relative;background:var(--ink);box-shadow:0 14px 30px -10px rgba(25,24,28,0.3);}
+  .photo-card img{aspect-ratio:4/5;object-fit:cover;width:100%;}
+  .case-tag{
+    position:absolute;top:10px;left:10px;z-index:4;
+    background:rgba(25,24,28,0.6);color:#fff;
+    font-size:0.62rem;letter-spacing:0.06em;font-weight:700;
+    padding:4px 9px;border-radius:999px;text-transform:uppercase;
+  }
+  .ba-label{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:0.78rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .ba-label.before{color:var(--rec);}
+  .ba-label.after{color:var(--teal-dark);}
+  .ba-label::before{content:"";width:22px;height:2px;background:currentColor;}
+  .ba-block{margin-bottom:56px;}
+  .ba-block:last-child{margin-bottom:0;}
+  .photo-card .cap{
+    padding:14px 16px;background:var(--cream);
+    font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--ink);
+  }
+
+  /* ---------- ORIGIN TEASER ---------- */
+  .origin{
+    background:var(--teal);color:#fff;border-radius:24px;padding:50px;
+    display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;
+  }
+  .origin .date-badge{
+    font-family:'Inter',sans-serif;background:var(--ink);color:var(--orange);
+    padding:14px 18px;border-radius:12px;font-size:0.85rem;text-align:center;white-space:nowrap;
+  }
+  .origin h3{color:#fff;font-size:1.7rem;margin-bottom:14px;}
+  .origin p{color:rgba(255,255,255,0.88);font-size:1.05rem;max-width:560px;}
+  .origin a{color:var(--orange);font-family:'Inter',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;}
+  @media (max-width:700px){.origin{grid-template-columns:1fr;padding:32px;}}
+
+  /* ---------- SPEC SHEET ---------- */
+  .spec-wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;}
+  @media (max-width:860px){.spec-wrap{grid-template-columns:1fr;}}
+  .spec-table{font-family:'Inter',sans-serif;font-size:0.92rem;border-top:1px solid var(--line);}
+  .spec-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);gap:20px;}
+  .spec-row .k{color:var(--ink-soft);letter-spacing:0.05em;}
+  .spec-row .v{font-weight:700;text-align:right;}
+  .price-tag{
+    display:flex;align-items:baseline;gap:10px;margin:26px 0 18px;
+  }
+  .price-tag .amt{font-family:'Inter',sans-serif;font-weight:800;font-size:2.6rem;}
+  .price-tag .unit{color:var(--ink-soft);font-family:'Inter',sans-serif;font-size:0.85rem;}
+
+  /* ---------- BENEFIT LIST (replaces spec table) ---------- */
+  .benefit-list{margin:28px 0;display:flex;flex-direction:column;gap:18px;}
+  .benefit-row{display:flex;gap:14px;align-items:flex-start;}
+  .benefit-row .check{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;
+    background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:0.85rem;margin-top:2px;
+  }
+  .benefit-row p{margin:0;font-size:1.02rem;color:var(--ink);line-height:1.5;}
+  .stat-badge{
+    display:inline-flex;align-items:baseline;gap:6px;
+    background:var(--paper);border-radius:999px;padding:6px 16px;
+    font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--ink-soft);margin-top:18px;
+  }
+  .stat-badge b{font-size:1.1rem;color:var(--ink);}
+
+  /* ---------- TODAY'S OBSERVATION ---------- */
+  .observation-card{
+    max-width:640px;margin:0 auto;background:var(--ink);border-radius:var(--radius);
+    padding:30px 32px 26px;position:relative;overflow:hidden;
+    box-shadow:0 14px 30px -10px rgba(25,24,28,0.35);
+  }
+  .observation-card .obs-top{
+    display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;
+  }
+  .observation-card .obs-top span{
+    font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.1em;
+    color:var(--orange);text-transform:uppercase;font-weight:700;
+  }
+  .observation-card .obs-date{color:rgba(251,250,248,0.5)!important;font-weight:500!important;}
+  .observation-card p{
+    color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;line-height:1.55;margin:0;
+  }
+  .observation-card .obs-sub{
+    margin-top:14px;color:rgba(251,250,248,0.55);font-size:0.88rem;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    border:1px solid rgba(251,250,248,0.12);border-radius:14px;
+    padding:6px 22px;margin-bottom:14px;background:rgba(251,250,248,0.03);
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .faq-item:hover{background:rgba(251,250,248,0.06);border-color:rgba(251,250,248,0.22);}
+  .faq-item summary{
+    font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;cursor:pointer;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+    padding:18px 0;color:#fff;gap:20px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .icon{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;
+    border:1.5px solid var(--orange);color:var(--orange);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1rem;line-height:1;transition:transform .25s ease;
+  }
+  .faq-item summary .icon::after{content:"+";}
+  .faq-item[open] summary .icon{transform:rotate(45deg);}
+  .faq-item p{color:rgba(255,255,255,0.88);margin:0 0 20px;max-width:680px;line-height:1.6;}
+
+  /* ---------- FOOTER ---------- */
+  footer.site-footer{background:var(--ink);color:var(--cream);padding:64px 0 32px;}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+  @media (max-width:760px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-grid h4{font-family:'Inter',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+  .footer-grid p,.footer-grid a{color:rgba(251,250,248,0.75);font-size:0.92rem;}
+  .subscribe-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+  .subscribe-row input{
+    flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid rgba(251,250,248,0.25);
+    background:transparent;color:#fff;font-family:'Inter',sans-serif;
+  }
+  .subscribe-row input::placeholder{color:rgba(251,250,248,0.45);}
+  .fine-print{border-top:1px solid rgba(251,250,248,0.15);padding-top:24px;font-size:0.8rem;color:rgba(251,250,248,0.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- SOCIAL ROW ---------- */
+  .social-row{display:flex;gap:12px;margin-top:20px;}
+  .social-row a{
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(251,250,248,0.08);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;transition:background .2s ease, transform .2s ease;
+  }
+  .social-row a:hover{background:var(--orange);color:var(--ink);transform:translateY(-2px);}
+  .social-row svg{width:18px;height:18px;fill:currentColor;}
+</style>
 </head>
 <body>
-  <div id="app"></div>
-  <script src="main.js"></script>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="logo-lockup"><img src="images/porchdrop-social-card.jpg" alt="PorchDrop icon" class="logo-badge"><span class="logo">Porch<span>Drop</span><sup style="font-size:0.5em;font-weight:600;">&reg;</sup></span></a>
+    <nav class="primary">
+      <a href="#data" class="nav-link">The Data</a>
+      <a href="#field-notes" class="nav-link">The Drop</a>
+      <a href="#shop" class="nav-link">The Fix</a>
+      <a href="#shop" class="btn">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Delivery culture, documented</span>
+      <h1>2,000 deliveries later... the problem became obvious.</h1>
+      <p class="dek">This is what we've learned about where your food actually lands: the data, the footage, and the thing we eventually built so the next bag doesn't end up on the ground.</p>
+      <div class="hero-ctas">
+        <a href="#shop" class="btn">Join the waitlist</a>
+        <a href="#data" class="text-link">See the data ↓</a>
+      </div>
+    </div>
+    <div class="proof-card reveal">
+      <span class="rec-tag"><span class="dot"></span>LIVE CAPTURE</span>
+      <img src="images/doordash-confirmation.jpg" alt="Real DoorDash no-contact delivery confirmation showing the order placed on a PorchDrop table">
+      <div class="stamp"><b>FRONT DOOR · NO-CONTACT</b>Dasher: DDDriver · delivered 5:21 PM, right on the table</div>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The data</span>
+      <h2>The numbers nobody asked for.</h2>
+      <p>Delivery stopped being an occasional treat a while ago. It's now a daily operation with its own logistics problems, most of which end at your doormat.</p>
+    </div>
+    <div class="grid-3">
+      <div class="proof-card is-stat reveal">
+        <div class="stamp-top"><span>Data · Q1 2026</span></div>
+        <div class="big">933M</div>
+        <p>orders placed on DoorDash in a single quarter, up 27% year over year.</p>
+        <div class="src">SOURCE: DOORDASH Q1 2026 EARNINGS</div>
+      </div>
+      <div class="proof-card is-stat reveal">
+        <div class="stamp-top"><span>Data · Dasher Interviews</span></div>
+        <div class="big">75%+</div>
+        <p>of deliveries get coded "Leave at Door," according to our own interviews with active Dashers. No handoff. No table. Just a spot that has to be picked.</p>
+        <div class="src">SOURCE: PORCHDROP FOUNDER INTERVIEWS WITH ACTIVE DASHERS, 2026</div>
+      </div>
+      <div class="proof-card is-stat reveal">
+        <div class="stamp-top"><span>Data · Daily</span></div>
+        <div class="big">10M+</div>
+        <p>orders happen on DoorDash every single day. Some land on a PorchDrop. Most still land on the ground.</p>
+        <div class="src">SOURCE: DERIVED FROM DOORDASH Q1 2026 EARNINGS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="observation">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Today's observation</span>
+      <h2>One thing we noticed today.</h2>
+      <p>A new one every day, straight from the front seat. No theme, no agenda, just whatever stood out.</p>
+    </div>
+    <div class="observation-card reveal">
+      <div class="obs-top">
+        <span>Field Log</span>
+        <span class="obs-date" id="obs-date">—</span>
+      </div>
+      <p id="obs-text">Loading today's observation...</p>
+      <div class="obs-sub">Filed by Russ, somewhere between deliveries.</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="field-notes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The drop</span>
+      <h2>Field notes from the front seat.</h2>
+      <p>Unedited observations, recorded between deliveries by our founder, Russ, currently sitting at around 2,000 drops and counting.</p>
+    </div>
+    <div class="grid-2">
+      <div class="proof-card is-quote reveal">
+        <div class="stamp-top"><span>Dash Cam · Car Rant Vol. 1</span></div>
+        <video controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
+          <source src="video/car-rant-1.mp4" type="video/mp4">
+        </video>
+        <footer>Recorded in the car, rainy season, 2026</footer>
+      </div>
+      <div class="proof-card is-quote reveal">
+        <div class="stamp-top"><span>Dash Cam · Car Rant Vol. 2</span></div>
+        <video controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
+          <source src="video/car-rant-2.mp4" type="video/mp4">
+        </video>
+        <footer>Recorded in the car, between drops, 2026</footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Exhibit A</span>
+      <h2>Before PorchDrop. After PorchDrop.</h2>
+      <p>No stock photos, no renders. Real deliveries, logged exactly as they happened.</p>
+    </div>
+
+    <div class="ba-block">
+      <span class="ba-label before">Before</span>
+      <div class="grid-3">
+        <div class="photo-card reveal">
+          <span class="case-tag">Delivery #0417</span>
+          <img src="images/problem-1.jpg" alt="A delivery bag and coffee cup left directly on a brick porch floor by the front door">
+          <div class="cap">Front entrance.<br>Bare brick.<br>No mat, no table, just the ground.</div>
+        </div>
+        <div class="photo-card reveal">
+          <span class="case-tag">Delivery #0418</span>
+          <img src="images/problem-2.jpg" alt="A small package left in a dirty concrete corner at a business entrance">
+          <div class="cap">Office entrance.<br>Concrete corner.<br>Filed under "good enough."</div>
+        </div>
+        <div class="photo-card reveal">
+          <span class="case-tag">Delivery #0419</span>
+          <img src="images/problem-3.jpg" alt="A takeout bag and drink leaning against a glass office storefront door">
+          <div class="cap">Lunch.<br>Concrete.<br>Office. Again.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-block">
+      <span class="ba-label after">After</span>
+      <div class="grid-3">
+        <div class="proof-card reveal">
+          <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
+          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <source src="video/ring-1.mp4" type="video/mp4">
+          </video>
+          <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>MAY 25 · 7:06 AM</b>Driver arrives. Looks once. Places order. Leaves.</div>
+        </div>
+        <div class="proof-card reveal">
+          <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
+          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <source src="video/ring-2.mp4" type="video/mp4">
+          </video>
+          <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>MAY 27 · 5:23 PM</b>Two days later. Different driver. Same instinct.</div>
+        </div>
+        <div class="photo-card reveal">
+          <span class="case-tag" style="background:rgba(29,130,141,0.85);">Resolved</span>
+          <img src="images/after-amazon.jpg" alt="An Amazon package resting on the PorchDrop table instead of the porch floor" style="object-position:top;">
+          <div class="cap">Not just food.<br>Amazon found it too.<br>Off the ground, every time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="origin reveal">
+      <div class="date-badge">JUNE<br>2025</div>
+      <div>
+        <h3>First delivery. No table, no stand. Just a bag on the ground.</h3>
+        <p>Russ started DoorDashing for some extra income between roles. On the very first run, the app said "leave at door." There was no door-adjacent anywhere to leave it, just concrete. He didn't love that. Neither did anyone else, it turned out.</p>
+        <a href="origin-story.html">Read the full story →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="wrap spec-wrap">
+    <img src="images/product-closeup.jpg" alt="Close-up of PorchDrop's PLACE FOOD HERE embossed tabletop" style="border-radius:var(--radius);box-shadow:0 14px 30px -10px rgba(25,24,28,0.3);">
+    <div class="reveal">
+      <span class="eyebrow">The fix</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem);">Your dinner finally has somewhere to land.</h2>
+      <p style="color:var(--ink-soft);margin-top:14px;">No more guessing where to leave it. No more bare brick. Just one obvious, clean spot, every single drop.</p>
+      <div class="price-tag"><span class="amt">$29.99</span><span class="unit">planned price · patent pending</span></div>
+      <div class="benefit-list">
+        <div class="benefit-row"><span class="check">✓</span><p>Built to stay outside so your deliveries don't have to sit on the ground.</p></div>
+        <div class="benefit-row"><span class="check">✓</span><p>Nothing slides, nothing spills, nothing rolls off into the bushes.</p></div>
+        <div class="benefit-row"><span class="check">✓</span><p>An obvious spot, even for a driver who's never been to your door before.</p></div>
+        <div class="benefit-row"><span class="check">✓</span><p>Wipes clean in seconds, because it's going to earn its keep daily.</p></div>
+      </div>
+      <div class="stat-badge">Holds up to <b>75 lbs</b> &nbsp;·&nbsp; legs come off when you don't need them</div>
+      <p style="color:var(--ink-soft);font-size:0.9rem;margin-top:22px;">We're getting close to relaunching. Leave your email and we'll let you know the moment it's time, no spam, just the news.</p>
+      <!-- MAILCHIMP: replace the form "action" URL below with your real embedded-form action URL once your audience is set up. -->
+      <form action="https://myporchdrop.us15.list-manage.com/subscribe/post?u=5f2ee32a6f1c39ecd1f77d104&amp;id=20f4992905&amp;f_id=00b9c2e1f0" method="post" target="_blank" novalidate class="subscribe-row" style="margin-top:14px;max-width:420px;">
+        <input type="email" name="EMAIL" placeholder="you@email.com" required style="flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:'Inter',sans-serif;">
+        <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_5f2ee32a6f1c39ecd1f77d104_20f4992905" tabindex="-1" value=""></div>
+        <button type="submit" class="btn" style="border:2px solid var(--ink);cursor:pointer;">Notify me</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Before you ask</span>
+      <h2>Quick answers.</h2>
+    </div>
+    <div class="reveal">
+      <details class="faq-item" open>
+        <summary>Will drivers actually use it?<span class="icon"></span></summary>
+        <p>Yep. They spend all day looking for somewhere obvious to set things down, and this is exactly that. We're showing real Ring footage instead of a 3D render because the raised "PLACE FOOD HERE" marker speaks for itself in the ten seconds a driver spends at your door.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why not just use a side table I already own?<span class="icon"></span></summary>
+        <p>You can, if you enjoy watching it warp by August. Most porch furniture isn't built to live outside year-round, sit at the right drop height, or survive 75 lbs of someone's entire Costco order. PorchDrop is purpose-built for exactly this one job.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's it made of?<span class="icon"></span></summary>
+        <p>A weatherproof, easy-clean material chosen specifically to hold up to sun, rain, and daily use without breaking down. Not your average plastic patio table, and it won't pretend to be one.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this just for food delivery?<span class="icon"></span></summary>
+        <p>No, it's just as happy holding Amazon boxes, groceries, and anything else that currently lands on your porch floor. Leave it out and it quietly becomes the default drop spot for everything.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo-lockup"><img src="images/porchdrop-social-card.jpg" alt="PorchDrop icon" class="logo-badge"><span class="logo" style="color:#fff;">Porch<span>Drop</span><sup style="font-size:0.5em;font-weight:600;">&reg;</sup></span></a>
+        <p style="margin-top:14px;max-width:280px;">A smarter, cleaner place for your delivery to land. Built by someone who's actually carried your food up the driveway, about 2,000 times now.</p>
+        <div class="social-row">
+          <a href="https://www.facebook.com/PorchDropOfficial" target="_blank" rel="noopener" aria-label="PorchDrop on Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.02H7.9v-2.92h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.45 2.92h-2.33V22C18.34 21.2 22 17.06 22 12.06Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/myporchdrop/" target="_blank" rel="noopener" aria-label="PorchDrop on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4.61.24 1.05.52 1.51.98.46.46.74.9.98 1.51.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43-.24.61-.52 1.05-.98 1.51-.46.46-.9.74-1.51.98-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.1 4.1 0 0 1-1.51-.98 4.1 4.1 0 0 1-.98-1.51c-.16-.46-.35-1.26-.4-2.43-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43.24-.61.52-1.05.98-1.51.46-.46.9-.74 1.51-.98.46-.16 1.26-.35 2.43-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63a6.26 6.26 0 0 0-2.27 1.48A6.26 6.26 0 0 0 .39 4.38c-.29.76-.5 1.64-.56 2.91C-.23 8.57-.24 8.98-.24 12.24s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.7 1.46 1.48 2.27.81.78 1.48 1.18 2.27 1.48.76.29 1.64.5 2.91.56C8.33 24.47 8.74 24.48 12 24.48s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a6.26 6.26 0 0 0 2.27-1.48 6.26 6.26 0 0 0 1.48-2.27c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a6.26 6.26 0 0 0-1.48-2.27A6.26 6.26 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.4-10.84a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z" transform="translate(0 -0.24)"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@myporchdrop" target="_blank" rel="noopener" aria-label="PorchDrop on TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-3.16-1.4V14.3a5.1 5.1 0 1 1-4.28-5.03v2.1a2.96 2.96 0 1 0 2.08 2.83V2h2.05a4.28 4.28 0 0 0 3.31 4.1Z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@PorchDrop" target="_blank" rel="noopener" aria-label="PorchDrop on YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.5s-.23-1.64-.94-2.36c-.9-.95-1.9-.95-2.37-1C16.84 3 12 3 12 3h-.01s-4.84 0-8.18.14c-.47.05-1.47.05-2.37 1C.73 4.86.5 6.5.5 6.5S.25 8.42.25 10.35v1.3C.25 13.58.5 15.5.5 15.5s.23 1.64.94 2.36c.9.95 2.08.92 2.6 1.02C5.84 19 12 19.05 12 19.05s4.84-.01 8.18-.15c.47-.06 1.47-.06 2.37-1.02.71-.72.95-2.36.95-2.36s.25-1.92.25-3.85v-1.3c0-1.93-.25-3.85-.25-3.85ZM9.55 14.2V8.4l5.7 2.9-5.7 2.9Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>The Drop</h4>
+        <p><a href="#data">The Data</a></p>
+        <p><a href="#observation">Today's Observation</a></p>
+        <p><a href="#field-notes">Field Notes</a></p>
+        <p><a href="origin-story.html">Origin Story</a></p>
+        <p><a href="privacy-policy.html">Privacy Policy</a></p>
+        <p><a href="terms.html">Terms &amp; Conditions</a></p>
+      </div>
+      <div>
+        <h4>Subscribe</h4>
+        <p>New data, new field notes, no spam.</p>
+        <!-- MAILCHIMP: replace the form "action" URL below with your real embedded-form action URL once your audience is set up. -->
+        <form action="https://myporchdrop.us15.list-manage.com/subscribe/post?u=5f2ee32a6f1c39ecd1f77d104&amp;id=20f4992905&amp;f_id=00b9c2e1f0" method="post" target="_blank" novalidate class="subscribe-row">
+          <input type="email" name="EMAIL" placeholder="you@email.com" required>
+          <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_5f2ee32a6f1c39ecd1f77d104_20f4992905" tabindex="-1" value=""></div>
+          <button type="submit" class="btn" style="border:2px solid var(--ink);cursor:pointer;">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="fine-print">
+      <span>© 2026 PorchDrop · Patent pending · Registered trademark</span>
+      <span>Tampa, FL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Today's Observation — rotates daily based on the date, no backend needed.
+  // To add more, just add a new string to this array. The more you add, the longer before it repeats.
+  const observations = [
+    "Coffee cups get placed farther from the door than food. Probably because nobody wants to spill them. Funny how we protect the drink more than the meal.",
+    "Most porches have at least one welcome mat and zero actual places to put something down.",
+    "Drivers spend more time deciding where to leave your order than you spent deciding what to order.",
+    "A package leaning against the door is doing its best impression of a doorstop.",
+    "Nobody has ever said \"just leave it on the ground\" out loud. And yet, here we are.",
+    "The average porch has more decorative pumpkins than actual flat surfaces.",
+    "If a raccoon can reach it, so can your neighbor's dog.",
+    "Every doorbell camera has caught a delivery bag getting mistaken for a doormat at least once.",
+    "Drivers ring twice: once to deliver, once to confirm gravity still works.",
+    "Somewhere right now, a salad is sweating on a brick step.",
+    "Nobody designs a porch thinking about where the pizza goes. Everybody should.",
+    "A flowerpot is not a table. This needs to be said more often.",
+    "The mail carrier and the food delivery driver are fighting over the same six square inches of concrete.",
+    "Most front steps were built before anyone delivered anything heavier than a newspaper.",
+    "You can tell how long a neighborhood has had delivery apps by how worn the porch paint is, right by the door.",
+    "A bag of groceries on a wet step is just produce taking a bath.",
+    "Somebody's dog has definitely investigated a delivery before the owner even knew it arrived.",
+    "Drivers don't read your decor. They read your floor space.",
+    "Every porch light is doing double duty as a stage light for a five-second delivery.",
+    "There's a special kind of disappointment in opening the door to find your order already tipped over.",
+    "A welcome mat that says \"Welcome\" has never once welcomed a delivery to anywhere useful.",
+    "The bigger the order, the smaller the available landing spot always seems to be.",
+    "You'll never know how uneven your porch is until someone sets down a drink on it.",
+    "Half of all \"missing\" deliveries are just sitting somewhere the homeowner didn't think to check.",
+    "Side door deliveries exist because front doors are apparently optional now.",
+    "A driver's job is 90% driving and 10% solving a tiny logistics puzzle at your door.",
+    "The dog always barks first. The doorbell second. The delivery third.",
+    "There is no universally agreed-upon place to put a package down, and that's the whole problem.",
+    "Rain doesn't pause delivery apps. It just adds a layer of difficulty.",
+    "Every porch has a 'spot' someone uses out of habit, not because it's actually good.",
+    "A delivery driver can read a porch faster than most people can read a room.",
+    "Apartment buildings turned 'leave at door' into a multi-floor scavenger hunt.",
+    "A package thief has never once been deterred by a porch that simply looks tidy.",
+    "Holiday season turns every porch into a temporary warehouse.",
+    "The gate code is the real boss level of any delivery.",
+    "Some houses have three doorbells and zero of them work.",
+    "A driver circling the block twice usually means your address doesn't match your house number.",
+    "Snow turns a five-second drop-off into a small expedition.",
+    "Every porch with stairs has at least one delivery story involving spilled soup.",
+    "Most 'no contact' deliveries still involve a very specific amount of contact with your door frame.",
+    "A driveway basketball hoop has never once helped anyone find the front door.",
+    "Gated communities exist to keep people out, which apparently includes your dinner.",
+    "Nobody puts effort into their mailbox anymore. It's all going to the porch now.",
+    "A bag left in direct sun for twenty minutes is just slow cooking at that point.",
+    "Every dog believes the delivery driver is either a threat or a friend, never anything in between.",
+    "There's a universal sigh drivers make when they see a flight of stairs.",
+    "Some porches have motion lights that trigger from a falling leaf, which is its own kind of chaos.",
+    "A driver who double-checks the photo before leaving has been burned before.",
+    "Glass front doors mean every delivery doubles as a tiny photo shoot, whether you want it or not.",
+    "Most 'special instructions' boxes are read for three seconds and forgotten in four.",
+    "A package balanced on a narrow railing is one gust of wind from becoming a problem.",
+    "Front porches in older neighborhoods were built for sitting, not receiving.",
+    "Every cul-de-sac has one house drivers quietly dread.",
+    "A driveway with no clear walking path becomes an obstacle course at dusk.",
+    "Some houses have a 'fake' front door that nobody actually uses, and drivers find out the hard way.",
+    "A driver's flashlight app has saved more deliveries than most porch lights ever will.",
+    "Cardboard left out overnight has never once dried out by morning.",
+    "There's a reason drivers love a clearly marked spot more than a nice porch.",
+    "A package next to a planter has a 50/50 shot of getting watered by accident.",
+    "Some intercoms buzz everyone in the building except the one person expecting a delivery.",
+    "A flat porch with good lighting is worth more to a driver than any decoration ever placed on it.",
+    "A frozen delivery in July is a race against the porch, not just the clock.",
+    "Some doormats have absorbed more spilled coffee than dirt.",
+    "A driver's tip is decided in the three seconds it takes to find somewhere decent to set things down.",
+    "Most front yards have a hose, a gnome, and absolutely nowhere flat for a bag of takeout.",
+    "Wind chimes have startled more drivers than actual dogs.",
+    "A bag of fast food left on a step for ten minutes has already started losing the argument with gravity.",
+    "Some porches slope just enough that anything round eventually rolls away.",
+    "A driver who finds the spot on the first try remembers that house forever.",
+    "Patio furniture exists in theory, but somehow never where the delivery needs it.",
+    "Every screen door has, at some point, slammed shut on a driver's hand.",
+    "A package in the rain for thirty seconds looks fine. A package in the rain for thirty minutes does not.",
+    "Some neighborhoods number their houses in an order only the original builder understood.",
+    "A driver checking the app twice usually means the pin is wrong, not the house.",
+    "Most porches are decorated for guests, not for deliveries, and it shows.",
+    "A bag of ice cream and a five-flight walkup have never once been friends.",
+    "Some doorbells play a tune so long the driver is already back in the car before it finishes.",
+    "A porch swing looks charming until someone tries to set four bags of groceries on it.",
+    "Every gated complex has one gate that's 'always broken,' which drivers learn fast.",
+    "A delivery left in direct afternoon sun ages like it's been sitting there since breakfast.",
+    "Some houses have a doorbell, a knocker, and a sign that says 'just walk in,' and somehow none of it helps.",
+    "A driver's mental map of a neighborhood is more accurate than most GPS apps.",
+    "Most porches were never measured for anything wider than a newspaper.",
+    "A bag set on uneven brick has already decided which way it's going to tip.",
+    "Some houses are 'the blue one' to every driver, regardless of the actual address.",
+    "A driver returning to the same house twice in one shift has a story by the third trip.",
+    "Most apartment buzzers list names that left two tenants ago.",
+    "A package balanced on a window ledge is a decision made under pressure.",
+    "Some porches have a step that's just slightly too high to be casual about.",
+    "A driver who parks in the wrong driveway by mistake learns the layout of strangers' lives in seconds.",
+    "Every neighborhood has one house where the dog and the doorbell trigger at exactly the same time.",
+    "A driver's day is measured in doorsteps, not miles.",
+    "Some porches have a 'good spot' that's really just the one place the dog can't reach.",
+    "A grocery bag left upright never stays upright for long.",
+    "Most security cameras catch the delivery and miss the part where it almost tipped over.",
+    "A driver weighing whether to knock or not has already decided based on how many cars are in the driveway.",
+    "Some towns still believe in the milk box. Drivers do not know what to do with the milk box.",
+    "A bag of hot food on a cold step is a small, brief act of charity toward the food.",
+    "Most 'leave at door' instructions assume a door that's easy to find.",
+    "A driver's GPS says arrived. The driver's eyes say otherwise.",
+    "Some porches have a step specifically designed to catch a shoelace and a delivery driver's balance at once.",
+    "A package set down gently still ends up looking like it wasn't.",
+    "Most doorbell cameras have a five-second delay that makes every delivery look slightly cinematic.",
+    "A driver's tip jar is invisible, but the porch is the form it takes.",
+    "Some neighborhoods have houses so similar that only the porch tells them apart.",
+    "A bag set near a plant gets watered whether it wants to be or not.",
+    "Most front doors face the street. Most usable space does not.",
+    "A driver who's been doing this a while can guess the order from the bag shape alone.",
+    "Some porches have just enough room for one bag, which is a problem on family order night.",
+    "A driveway with a sprinkler on a timer has surprised more than one delivery.",
+    "Most 'ring twice' requests are heard once, because the second ring usually doesn't happen.",
+    "A driver's flashlight beam is the only light some porches have ever seen.",
+    "Some houses look occupied until the third ring goes unanswered.",
+    "A bag of takeout balanced on a narrow ledge is one breeze away from a very bad photo.",
+    "Most porches were designed by someone who never once imagined a 40-pound order of groceries.",
+    "A driver's least favorite phrase is 'just past the second speed bump.'",
+    "Some doormats have a joke printed on them that no driver has ever had time to read.",
+    "A package set on a step at night basically disappears until morning.",
+    "Most front yards have a path that leads everywhere except the door.",
+    "A driver who finds a porch light on already trusts that house a little more.",
+    "Some neighborhoods have a 'that one house' that every driver quietly avoids on dark nights.",
+    "A driver's worst enemy isn't traffic, it's a porch with no clear edge.",
+    "Some houses have a beautiful porch and absolutely nowhere flat on it.",
+    "A bag of sushi on a hot step has a much shorter shelf life than the app suggests.",
+    "Most 'gate code' instructions are typed once and never checked again.",
+    "A driver remembers the houses with stairs more than the houses with great reviews.",
+    "Some porches have a step that wobbles just enough to make every delivery feel like a gamble.",
+    "A package set on the edge of a step has already started its journey downward.",
+    "Most front doors have a peephole nobody's looked through in years, including for deliveries.",
+    "A driver's relationship with motion-sensor lights is complicated at best.",
+    "Some neighborhoods feel like they were built before anyone imagined a stranger arriving at 9pm with dinner.",
+    "A bag left at an angle on uneven concrete is just waiting for a reason to fall.",
+    "Most apartment lobbies have a buzzer system nobody fully understands, drivers least of all.",
+    "A driver's patience is directly proportional to how many steps are between the car and the door.",
+    "Some porches are technically large enough, just not in any of the useful directions.",
+    "A package balanced on a chair has made peace with its own instability.",
+    "Most front steps narrow right where you'd want them to widen.",
+    "A driver who's delivered to the same house ten times still double-checks the address on the eleventh.",
+    "Some doormats are purely decorative, in the sense that they decorate the area where a package will eventually sit.",
+    "A bag left in a covered spot during rain is the smallest victory of any given shift.",
+    "Most porches were never meant to hold anything heavier than a pair of muddy boots.",
+    "Set a case of soda on the welcome mat and watch it end up half in the sun, half in the shade, like it's hedging its bets.",
+    "There's a version of every porch where a sushi order lands on the bottom stair and gets a little too friendly with the sprinkler.",
+    "Every shift, a box of diapers ends up on the garage door, where it becomes a small obstacle for whoever opens the door next.",
+    "Somewhere tonight, a meal kit box is sitting on the bottom stair, and it sits there just long enough to become a topic of conversation.",
+    "Somewhere tonight, a grocery bag is sitting on a patch of grass that passes for a yard, and it becomes the reason someone finally fixes that porch light.",
+    "Somewhere tonight, a bag of fruit is sitting on the welcome mat, and it looks fine in the photo and somehow worse in person.",
+    "Every shift, a bag of takeout ends up on the doorbell camera's blind spot, where it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Set an Amazon box on the side door and watch it become a small obstacle for whoever opens the door next.",
+    "Set a meal kit box on the side door and watch it get a little too friendly with the sprinkler.",
+    "Set a bag of ice on the bottom stair and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a grocery bag on a gap between two planters and watch it tip over before the door even opens.",
+    "Somewhere tonight, an Amazon box is sitting on a plastic bin nobody asked for, and it tips over before the door even opens.",
+    "Set a stack of mail on the doorbell camera's blind spot and watch it get immediately investigated by a dog that was definitely not invited.",
+    "There's a version of every porch where a sushi order lands on a narrow ledge and gets a little too friendly with the sprinkler.",
+    "Set a bouquet of flowers on a narrow ledge and watch it sit there just long enough to become a topic of conversation.",
+    "Set a pizza box on a patch of grass that passes for a yard and watch it become a small obstacle for whoever opens the door next.",
+    "There's a version of every porch where a sushi order lands on the driveway and tips over before the door even opens.",
+    "Somewhere tonight, a stack of mail is sitting on a patch of grass that passes for a yard, and it becomes the reason someone finally fixes that porch light.",
+    "Set a pizza box on the doorbell camera's blind spot and watch it sit there just long enough to become a topic of conversation.",
+    "Set a box of diapers on the doorbell camera's blind spot and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Every shift, a box of cleaning supplies ends up on the doorbell camera's blind spot, where it finds the one uneven patch of concrete on the whole porch.",
+    "There's a version of every porch where a bag of takeout lands on the doorbell camera's blind spot and tips over before the door even opens.",
+    "Set a bag of takeout on the garage door and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a bag of dog food on the porch railing and watch it end up half in the sun, half in the shade, like it's hedging its bets.",
+    "Somewhere tonight, a bag of fruit is sitting on a narrow ledge, and it gets a little too friendly with the sprinkler.",
+    "Somewhere tonight, a box of diapers is sitting on the porch railing, and it gets immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a bag of coffee is sitting on the driveway, and it becomes the reason someone finally fixes that porch light.",
+    "Set a bag of takeout on a folding chair and watch it look fine in the photo and somehow worse in person.",
+    "Every shift, a case of soda ends up on the bottom stair, where it gets a little too friendly with the sprinkler.",
+    "Somewhere tonight, a case of soda is sitting on the porch railing, and it ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a stack of mail on a plastic bin nobody asked for and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a pizza box on the welcome mat and watch it look fine in the photo and somehow worse in person.",
+    "Every shift, a stack of mail ends up on a folding chair, where it finds the one uneven patch of concrete on the whole porch.",
+    "Set a grocery bag on the garage door and watch it become a small obstacle for whoever opens the door next.",
+    "Every shift, a pizza box ends up on a flower bed, where it becomes a small obstacle for whoever opens the door next.",
+    "Somewhere tonight, a bag of takeout is sitting on the garage door, and it looks fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a box of cleaning supplies is sitting on right by the mailbox, and it gets immediately investigated by a dog that was definitely not invited.",
+    "There's a version of every porch where a bag of coffee lands on the welcome mat and blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a box of cleaning supplies on the side door and watch it become the reason someone finally fixes that porch light.",
+    "Every shift, a bag of dog food ends up on the driveway, where it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a box of cleaning supplies on the garage door and watch it end up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a bag of fruit on a folding chair and watch it become a small obstacle for whoever opens the door next.",
+    "There's a version of every porch where a bag of ice lands on the bottom stair and becomes the reason someone finally fixes that porch light.",
+    "Somewhere tonight, a box of diapers is sitting on a patch of grass that passes for a yard, and it looks fine in the photo and somehow worse in person.",
+    "Set a pizza box on right by the mailbox and watch it end up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a bag of fruit on a flower bed and watch it sit there just long enough to become a topic of conversation.",
+    "Set a bag of fast food on the driveway and watch it become the reason someone finally fixes that porch light.",
+    "Every shift, a pizza box ends up on the side door, where it sits there just long enough to become a topic of conversation.",
+    "Every shift, a bag of ice ends up on the porch railing, where it sits there just long enough to become a topic of conversation.",
+    "Somewhere tonight, a bag of fast food is sitting on the top step, and it becomes the reason someone finally fixes that porch light.",
+    "Set a sushi order on a flower bed and watch it tip over before the door even opens.",
+    "Set a cake box on the welcome mat and watch it get a little too friendly with the sprinkler.",
+    "Set a bag of fast food on right by the mailbox and watch it get immediately investigated by a dog that was definitely not invited.",
+    "Every shift, a bag of fast food ends up on the side door, where it gets immediately investigated by a dog that was definitely not invited.",
+    "Set an Amazon box on a narrow ledge and watch it find the one uneven patch of concrete on the whole porch.",
+    "Somewhere tonight, a meal kit box is sitting on the driveway, and it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a bag of fast food on a narrow ledge and watch it get a little too friendly with the sprinkler.",
+    "Somewhere tonight, an Amazon box is sitting on the doorbell camera's blind spot, and it gets immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a bag of ice is sitting on the doorbell camera's blind spot, and it sits there just long enough to become a topic of conversation.",
+    "There's a version of every porch where a sushi order lands on the top step and blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Every shift, a bag of coffee ends up on the driveway, where it becomes a small obstacle for whoever opens the door next.",
+    "Every shift, a cake box ends up on the driveway, where it sits there just long enough to become a topic of conversation.",
+    "Every shift, a meal kit box ends up on the garage door, where it becomes a small obstacle for whoever opens the door next.",
+    "Set a pizza box on the porch railing and watch it tip over before the door even opens.",
+    "Set a bag of ice on a flower bed and watch it become the reason someone finally fixes that porch light.",
+    "Somewhere tonight, a bag of dog food is sitting on a flower bed, and it tips over before the door even opens.",
+    "Set a cake box on a narrow ledge and watch it look fine in the photo and somehow worse in person.",
+    "Set a box of diapers on the welcome mat and watch it get immediately investigated by a dog that was definitely not invited.",
+    "There's a version of every porch where a box of cleaning supplies lands on the side door and becomes a small obstacle for whoever opens the door next.",
+    "Set a bag of fruit on the welcome mat and watch it get a little too friendly with the sprinkler.",
+    "There's a version of every porch where a grocery bag lands on the welcome mat and becomes the reason someone finally fixes that porch light.",
+    "Set an Amazon box on a gap between two planters and watch it get a little too friendly with the sprinkler.",
+    "Set a six-pack on a narrow ledge and watch it become a small obstacle for whoever opens the door next.",
+    "Every shift, a bag of dog food ends up on the welcome mat, where it tips over before the door even opens.",
+    "Set a bag of fruit on the driveway and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a bag of dog food on a patch of grass that passes for a yard and watch it tip over before the door even opens.",
+    "Set a pizza box on right by the mailbox and watch it sit there just long enough to become a topic of conversation.",
+    "Somewhere tonight, a case of water is sitting on the driveway, and it becomes the reason someone finally fixes that porch light.",
+    "Somewhere tonight, a bag of fast food is sitting on the driveway, and it ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Somewhere tonight, a cake box is sitting on the bottom stair, and it tips over before the door even opens.",
+    "Set an Amazon box on a folding chair and watch it get a little too friendly with the sprinkler.",
+    "There's a version of every porch where a bag of coffee lands on the garage door and tips over before the door even opens.",
+    "Every shift, a stack of mail ends up on a folding chair, where it becomes a small obstacle for whoever opens the door next.",
+    "Set a meal kit box on the driveway and watch it end up half in the sun, half in the shade, like it's hedging its bets.",
+    "Somewhere tonight, an Amazon box is sitting on the side door, and it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Somewhere tonight, a grocery bag is sitting on a flower bed, and it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "There's a version of every porch where a case of water lands on the porch railing and becomes a small obstacle for whoever opens the door next.",
+    "Somewhere tonight, a box of cleaning supplies is sitting on right by the mailbox, and it becomes the reason someone finally fixes that porch light.",
+    "Set a pizza box on the bottom stair and watch it become a small obstacle for whoever opens the door next.",
+    "There's a version of every porch where a pizza box lands on the garage door and gets immediately investigated by a dog that was definitely not invited.",
+    "There's a version of every porch where a bag of fruit lands on a flower bed and tips over before the door even opens.",
+    "Set a box of diapers on the bottom stair and watch it find the one uneven patch of concrete on the whole porch.",
+    "Every shift, a bag of coffee ends up on a narrow ledge, where it finds the one uneven patch of concrete on the whole porch.",
+    "Somewhere tonight, a bag of ice is sitting on the welcome mat, and it becomes the reason someone finally fixes that porch light.",
+    "Set a bag of takeout on the welcome mat and watch it find the one uneven patch of concrete on the whole porch.",
+    "Set a bag of dog food on a patch of grass that passes for a yard and watch it sit there just long enough to become a topic of conversation.",
+    "Set a bag of coffee on the garage door and watch it look fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a pizza box is sitting on a plastic bin nobody asked for, and it ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Somewhere tonight, a sushi order is sitting on right by the mailbox, and it becomes a small obstacle for whoever opens the door next.",
+    "Every shift, a box of diapers ends up on a narrow ledge, where it tips over before the door even opens.",
+    "Set a pharmacy bag on the porch railing and watch it become a small obstacle for whoever opens the door next.",
+    "Set a stack of mail on a plastic bin nobody asked for and watch it get a little too friendly with the sprinkler.",
+    "Set a six-pack on a flower bed and watch it sit there just long enough to become a topic of conversation.",
+    "There's a version of every porch where a case of soda lands on a plastic bin nobody asked for and tips over before the door even opens.",
+    "Every shift, a case of soda ends up on the top step, where it looks fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a bouquet of flowers is sitting on the side door, and it tips over before the door even opens.",
+    "Set a sushi order on the side door and watch it become the reason someone finally fixes that porch light.",
+    "Set a meal kit box on the top step and watch it tip over before the door even opens.",
+    "Set a bouquet of flowers on a plastic bin nobody asked for and watch it find the one uneven patch of concrete on the whole porch.",
+    "There's a version of every porch where a bag of coffee lands on the top step and ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a bouquet of flowers on a folding chair and watch it find the one uneven patch of concrete on the whole porch.",
+    "Set an Amazon box on the side door and watch it find the one uneven patch of concrete on the whole porch.",
+    "Set a box of diapers on the top step and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a bag of ice on a flower bed and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Every shift, a box of cleaning supplies ends up on the driveway, where it becomes the reason someone finally fixes that porch light.",
+    "Set a bag of dog food on the porch railing and watch it get a little too friendly with the sprinkler.",
+    "Set a bag of ice on a plastic bin nobody asked for and watch it look fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a bag of coffee is sitting on a gap between two planters, and it gets immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a meal kit box is sitting on the top step, and it looks fine in the photo and somehow worse in person.",
+    "Set a bouquet of flowers on the garage door and watch it get a little too friendly with the sprinkler.",
+    "Somewhere tonight, a pizza box is sitting on a narrow ledge, and it gets a little too friendly with the sprinkler.",
+    "Every shift, a box of diapers ends up on a flower bed, where it sits there just long enough to become a topic of conversation.",
+    "Set a bag of fruit on a gap between two planters and watch it look fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a case of water is sitting on a gap between two planters, and it tips over before the door even opens.",
+    "Set a bag of ice on a gap between two planters and watch it get a little too friendly with the sprinkler.",
+    "Every shift, a bag of fruit ends up on a patch of grass that passes for a yard, where it looks fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a bag of coffee is sitting on a patch of grass that passes for a yard, and it becomes the reason someone finally fixes that porch light.",
+    "There's a version of every porch where a meal kit box lands on the porch railing and gets immediately investigated by a dog that was definitely not invited.",
+    "There's a version of every porch where a cake box lands on the porch railing and becomes a small obstacle for whoever opens the door next.",
+    "Every shift, a stack of mail ends up on a flower bed, where it finds the one uneven patch of concrete on the whole porch.",
+    "Every shift, an Amazon box ends up on a flower bed, where it ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a bag of dog food on the side door and watch it become a small obstacle for whoever opens the door next.",
+    "There's a version of every porch where an Amazon box lands on the doorbell camera's blind spot and becomes the reason someone finally fixes that porch light.",
+    "There's a version of every porch where a pharmacy bag lands on the driveway and gets a little too friendly with the sprinkler.",
+    "Set a pizza box on a folding chair and watch it get a little too friendly with the sprinkler.",
+    "Every shift, a bag of fast food ends up on the garage door, where it ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a stack of mail on the doorbell camera's blind spot and watch it become a small obstacle for whoever opens the door next.",
+    "Every shift, a stack of mail ends up on a flower bed, where it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "There's a version of every porch where a pizza box lands on the driveway and sits there just long enough to become a topic of conversation.",
+    "There's a version of every porch where a box of cleaning supplies lands on a narrow ledge and gets immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a case of soda is sitting on right by the mailbox, and it gets immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a bag of dog food is sitting on a plastic bin nobody asked for, and it looks fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a case of water is sitting on the porch railing, and it gets immediately investigated by a dog that was definitely not invited.",
+    "Every shift, a case of soda ends up on the welcome mat, where it gets a little too friendly with the sprinkler.",
+    "Every shift, a bag of fast food ends up on the bottom stair, where it becomes a small obstacle for whoever opens the door next.",
+    "There's a version of every porch where a bag of takeout lands on a folding chair and tips over before the door even opens.",
+    "Every shift, a pizza box ends up on the side door, where it tips over before the door even opens.",
+    "Set a six-pack on right by the mailbox and watch it sit there just long enough to become a topic of conversation.",
+    "Set a cake box on a gap between two planters and watch it sit there just long enough to become a topic of conversation.",
+    "Every shift, a sushi order ends up on the porch railing, where it gets a little too friendly with the sprinkler.",
+    "There's a version of every porch where a bouquet of flowers lands on a plastic bin nobody asked for and tips over before the door even opens.",
+    "Set a stack of mail on the side door and watch it get immediately investigated by a dog that was definitely not invited.",
+    "There's a version of every porch where a sushi order lands on the welcome mat and tips over before the door even opens.",
+    "Set a bouquet of flowers on the top step and watch it get a little too friendly with the sprinkler.",
+    "Set a case of soda on a patch of grass that passes for a yard and watch it become the reason someone finally fixes that porch light.",
+    "Somewhere tonight, a six-pack is sitting on the garage door, and it becomes a small obstacle for whoever opens the door next.",
+    "There's a version of every porch where a bag of ice lands on the welcome mat and finds the one uneven patch of concrete on the whole porch.",
+    "Set a bouquet of flowers on a patch of grass that passes for a yard and watch it find the one uneven patch of concrete on the whole porch.",
+    "Every shift, a stack of mail ends up on a folding chair, where it looks fine in the photo and somehow worse in person.",
+    "There's a version of every porch where a bouquet of flowers lands on the porch railing and becomes a small obstacle for whoever opens the door next.",
+    "There's a version of every porch where a meal kit box lands on a narrow ledge and finds the one uneven patch of concrete on the whole porch.",
+    "Set a pharmacy bag on the side door and watch it look fine in the photo and somehow worse in person.",
+    "Set a pharmacy bag on a narrow ledge and watch it tip over before the door even opens.",
+    "Set an Amazon box on a flower bed and watch it get a little too friendly with the sprinkler.",
+    "There's a version of every porch where a stack of mail lands on the driveway and finds the one uneven patch of concrete on the whole porch.",
+    "Somewhere tonight, a case of soda is sitting on the driveway, and it finds the one uneven patch of concrete on the whole porch.",
+    "Set a case of soda on the garage door and watch it find the one uneven patch of concrete on the whole porch.",
+    "There's a version of every porch where a sushi order lands on the garage door and gets immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a box of cleaning supplies is sitting on a folding chair, and it looks fine in the photo and somehow worse in person.",
+    "Every shift, a grocery bag ends up on the driveway, where it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Somewhere tonight, an Amazon box is sitting on the doorbell camera's blind spot, and it gets a little too friendly with the sprinkler.",
+    "Set a bag of takeout on the side door and watch it become the reason someone finally fixes that porch light.",
+    "Every shift, a case of soda ends up on the doorbell camera's blind spot, where it sits there just long enough to become a topic of conversation.",
+    "Somewhere tonight, a bag of takeout is sitting on a flower bed, and it finds the one uneven patch of concrete on the whole porch.",
+    "Set a bag of ice on the welcome mat and watch it become a small obstacle for whoever opens the door next.",
+    "Set a bag of ice on the doorbell camera's blind spot and watch it find the one uneven patch of concrete on the whole porch.",
+    "Set a case of water on a narrow ledge and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "There's a version of every porch where an Amazon box lands on the driveway and becomes the reason someone finally fixes that porch light.",
+    "Somewhere tonight, a bag of takeout is sitting on the side door, and it sits there just long enough to become a topic of conversation.",
+    "Set a bag of takeout on right by the mailbox and watch it end up half in the sun, half in the shade, like it's hedging its bets.",
+    "Every shift, a sushi order ends up on the doorbell camera's blind spot, where it gets immediately investigated by a dog that was definitely not invited.",
+    "Set a box of diapers on the garage door and watch it find the one uneven patch of concrete on the whole porch.",
+    "Somewhere tonight, a grocery bag is sitting on the porch railing, and it gets immediately investigated by a dog that was definitely not invited.",
+    "Set a bag of fruit on a patch of grass that passes for a yard and watch it become a small obstacle for whoever opens the door next.",
+    "Every shift, a cake box ends up on a patch of grass that passes for a yard, where it ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a box of cleaning supplies on the doorbell camera's blind spot and watch it tip over before the door even opens.",
+    "There's a version of every porch where a case of soda lands on a patch of grass that passes for a yard and ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a grocery bag on the doorbell camera's blind spot and watch it end up half in the sun, half in the shade, like it's hedging its bets.",
+    "Every shift, a bag of dog food ends up on a narrow ledge, where it looks fine in the photo and somehow worse in person.",
+    "Every shift, a pizza box ends up on a patch of grass that passes for a yard, where it finds the one uneven patch of concrete on the whole porch.",
+    "Set a cake box on the top step and watch it look fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a pharmacy bag is sitting on the porch railing, and it finds the one uneven patch of concrete on the whole porch.",
+    "Set a bag of takeout on the welcome mat and watch it sit there just long enough to become a topic of conversation.",
+    "There's a version of every porch where a cake box lands on right by the mailbox and becomes a small obstacle for whoever opens the door next.",
+    "Somewhere tonight, a case of soda is sitting on the welcome mat, and it sits there just long enough to become a topic of conversation.",
+    "Somewhere tonight, a box of diapers is sitting on a flower bed, and it gets a little too friendly with the sprinkler.",
+    "There's a version of every porch where a bag of fruit lands on the driveway and looks fine in the photo and somehow worse in person.",
+    "Every shift, a bag of fruit ends up on the welcome mat, where it finds the one uneven patch of concrete on the whole porch.",
+    "Somewhere tonight, a grocery bag is sitting on a flower bed, and it becomes the reason someone finally fixes that porch light.",
+    "Every shift, a pizza box ends up on the porch railing, where it sits there just long enough to become a topic of conversation.",
+    "There's a version of every porch where a pharmacy bag lands on a flower bed and looks fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a bag of fast food is sitting on a narrow ledge, and it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Every shift, a grocery bag ends up on the porch railing, where it blends in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a pizza box on the garage door and watch it sit there just long enough to become a topic of conversation.",
+    "There's a version of every porch where a box of diapers lands on the welcome mat and ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Set a pizza box on the doorbell camera's blind spot and watch it look fine in the photo and somehow worse in person.",
+    "There's a version of every porch where a six-pack lands on the side door and looks fine in the photo and somehow worse in person.",
+    "Set a case of water on a plastic bin nobody asked for and watch it blend in with the rest of the clutter nobody's gotten around to moving.",
+    "Set a pizza box on a patch of grass that passes for a yard and watch it get immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a bag of fruit is sitting on a narrow ledge, and it becomes the reason someone finally fixes that porch light.",
+    "Somewhere tonight, a pizza box is sitting on a flower bed, and it tips over before the door even opens.",
+    "Set a cake box on the top step and watch it find the one uneven patch of concrete on the whole porch.",
+    "There's a version of every porch where a bag of takeout lands on the garage door and becomes the reason someone finally fixes that porch light.",
+    "Set a box of diapers on a flower bed and watch it look fine in the photo and somehow worse in person.",
+    "Somewhere tonight, a case of water is sitting on the doorbell camera's blind spot, and it gets immediately investigated by a dog that was definitely not invited.",
+    "Somewhere tonight, a bag of takeout is sitting on a patch of grass that passes for a yard, and it sits there just long enough to become a topic of conversation.",
+    "Set a box of diapers on right by the mailbox and watch it sit there just long enough to become a topic of conversation.",
+    "Every shift, a bag of fast food ends up on a folding chair, where it finds the one uneven patch of concrete on the whole porch.",
+    "Somewhere tonight, a meal kit box is sitting on right by the mailbox, and it becomes the reason someone finally fixes that porch light.",
+    "There's a version of every porch where a grocery bag lands on a plastic bin nobody asked for and ends up half in the sun, half in the shade, like it's hedging its bets.",
+    "Every shift, a grocery bag ends up on right by the mailbox, where it becomes the reason someone finally fixes that porch light.",
+    "Every shift, a bag of ice ends up on a flower bed, where it sits there just long enough to become a topic of conversation.",
+    "There's a version of every porch where a sushi order lands on a narrow ledge and becomes a small obstacle for whoever opens the door next.",
+    "Set a pizza box on the bottom stair and watch it get a little too friendly with the sprinkler."
+  ];
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0)) / 86400000);
+  const todayObs = observations[dayOfYear % observations.length];
+  const obsText = document.getElementById('obs-text');
+  const obsDate = document.getElementById('obs-date');
+  if(obsText) obsText.textContent = todayObs;
+  if(obsDate) obsDate.textContent = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+</script>
+
 </body>
 </html>
