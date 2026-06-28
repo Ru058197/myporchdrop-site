@@ -327,6 +327,7 @@
     background:transparent;color:#fff;font-family:'Inter',sans-serif;
   }
   .subscribe-row input::placeholder{color:rgba(251,250,248,0.45);}
+  #shop .subscribe-row input::placeholder{color:var(--ink-soft);opacity:0.55;}
   .fine-print{border-top:1px solid rgba(251,250,248,0.15);padding-top:24px;font-size:0.8rem;color:rgba(251,250,248,0.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
   /* ---------- SOCIAL ROW ---------- */
@@ -535,6 +536,7 @@
       <p style="color:var(--ink-soft);font-size:0.9rem;margin-top:22px;">We're getting close to relaunching. Leave your email and we'll let you know the moment it's time, no spam, just the news.</p>
       <!-- MAILCHIMP: replace the form "action" URL below with your real embedded-form action URL once your audience is set up. -->
       <form action="https://myporchdrop.us15.list-manage.com/subscribe/post?u=5f2ee32a6f1c39ecd1f77d104&amp;id=20f4992905&amp;f_id=00b9c2e1f0" method="post" target="_blank" novalidate class="subscribe-row" style="margin-top:14px;max-width:420px;">
+        <input type="text" name="FNAME" placeholder="First name" style="flex:1;min-width:120px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:'Inter',sans-serif;">
         <input type="email" name="EMAIL" placeholder="you@email.com" required style="flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:'Inter',sans-serif;">
         <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_5f2ee32a6f1c39ecd1f77d104_20f4992905" tabindex="-1" value=""></div>
         <button type="submit" class="btn" style="border:2px solid var(--ink);cursor:pointer;">Notify me</button>
@@ -605,6 +607,7 @@
         <p>New data, new field notes, no spam.</p>
         <!-- MAILCHIMP: replace the form "action" URL below with your real embedded-form action URL once your audience is set up. -->
         <form action="https://myporchdrop.us15.list-manage.com/subscribe/post?u=5f2ee32a6f1c39ecd1f77d104&amp;id=20f4992905&amp;f_id=00b9c2e1f0" method="post" target="_blank" novalidate class="subscribe-row">
+          <input type="text" name="FNAME" placeholder="First name">
           <input type="email" name="EMAIL" placeholder="you@email.com" required>
           <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_5f2ee32a6f1c39ecd1f77d104_20f4992905" tabindex="-1" value=""></div>
           <button type="submit" class="btn" style="border:2px solid var(--ink);cursor:pointer;">Join</button>
