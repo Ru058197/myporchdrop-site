@@ -65,7 +65,7 @@
     text-decoration:none;border:2px solid var(--ink);transition:transform .15s ease, box-shadow .15s ease;
   }
   .btn:hover{transform:translateY(-2px);box-shadow:3px 4px 0 var(--ink);}
-  @media (max-width:760px){nav.primary a.nav-link{display:none;}}
+  @media (max-width:760px){nav.primary{display:none;}}
   .hamburger{
     display:none;background:none;border:none;cursor:pointer;padding:8px;
     flex-direction:column;gap:5px;justify-content:center;
@@ -89,6 +89,7 @@
     border-bottom:1px solid var(--line);
   }
   .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu a.btn{border-bottom:none;text-align:center;margin-top:8px;color:var(--ink)!important;padding:13px 20px;}
   @media (min-width:761px){.mobile-menu{display:none !important;}}
 
   .article-hero{padding:56px 0 36px;}
@@ -137,6 +138,7 @@
     <a href="index.html#data">The Data</a>
     <a href="index.html#field-notes">The Drop</a>
     <a href="index.html#shop">The Fix</a>
+    <a href="index.html#shop" class="btn">Join the waitlist</a>
   </div>
 </header>
 

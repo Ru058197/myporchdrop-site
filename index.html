@@ -104,7 +104,7 @@
   .btn:hover{transform:translateY(-2px);box-shadow:3px 4px 0 var(--ink);}
   .btn.ghost{background:transparent;border:2px solid var(--ink);}
   @media (max-width:760px){
-    nav.primary a.nav-link{display:none;}
+    nav.primary{display:none;}
   }
   .hamburger{
     display:none;background:none;border:none;cursor:pointer;padding:8px;
@@ -129,6 +129,10 @@
     border-bottom:1px solid var(--line);
   }
   .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu a.btn{
+    border-bottom:none;text-align:center;margin-top:8px;
+    color:var(--ink)!important;padding:13px 20px;
+  }
   @media (min-width:761px){.mobile-menu{display:none !important;}}
 
   /* ---------- HERO ---------- */
@@ -390,6 +394,7 @@
     <a href="#data" onclick="closeMobileMenu()">The Data</a>
     <a href="#field-notes" onclick="closeMobileMenu()">The Drop</a>
     <a href="#shop" onclick="closeMobileMenu()">The Fix</a>
+    <a href="#shop" class="btn" onclick="closeMobileMenu()">Join the waitlist</a>
   </div>
 </header>
 
