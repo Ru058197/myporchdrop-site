@@ -15,17 +15,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --teal:#2C8792;
+    --teal:#1D828D;
     --teal-dark:#206770;
-    --orange:#FFAF54;
+    --orange:#FFAF5E;
     --orange-dark:#E89236;
-    --cream:#FBFAF8;
-    --paper:#F3EFE6;
-    --ink:#19181C;
-    --ink-soft:#6F7478;
+    --cream:#F5F0E8;
+    --paper:#F5F0E8;
+    --ink:#102523;
+    --ink-soft:#7E938F;
     --line: rgba(25,24,28,0.12);
     --radius: 16px;
   }
@@ -33,35 +33,35 @@
   html{scroll-behavior:smooth;}
   body{
     margin:0;background:var(--cream);color:var(--ink);
-    font-family:'Poppins',sans-serif;font-size:16px;line-height:1.6;
+    font-family:'Open Sans',sans-serif;font-size:16px;line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
   img{max-width:100%;display:block;}
   a{color:var(--teal-dark);text-decoration:underline;}
   .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
-  h1,h2{font-family:'Poppins',sans-serif;font-weight:800;line-height:1.15;margin:0;letter-spacing:-0.01em;}
+  h1,h2{font-family:'League Spartan',sans-serif;font-weight:800;line-height:1.15;margin:0;letter-spacing:-0.01em;}
   .eyebrow{
-    font-family:'Poppins',sans-serif;font-size:0.72rem;letter-spacing:0.14em;
+    font-family:'Open Sans',sans-serif;font-size:0.72rem;letter-spacing:0.14em;
     text-transform:uppercase;color:var(--teal-dark);font-weight:700;
     display:inline-flex;align-items:center;gap:8px;
   }
-  .eyebrow::before{content:"●";color:#E2553A;font-size:0.6rem;}
+  .eyebrow::before{content:"●";color:#FFAF5E;font-size:0.6rem;}
 
   header.masthead{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line);}
   .masthead-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1180px;margin:0 auto;}
   .logo-lockup{display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
   .logo-badge{width:32px;height:32px;border-radius:8px;display:block;object-fit:cover;flex-shrink:0;}
-  .logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.6rem;text-decoration:none;letter-spacing:-0.01em;color:var(--ink);}
+  .logo{font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.6rem;text-decoration:none;letter-spacing:-0.01em;color:var(--ink);}
   .logo span{color:var(--orange-dark);}
   nav.primary{display:flex;align-items:center;gap:28px;}
   nav.primary a.nav-link{
-    font-family:'Poppins',sans-serif;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;
+    font-family:'Open Sans',sans-serif;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;
     text-decoration:none;color:var(--ink);font-weight:700;padding-bottom:2px;border-bottom:2px solid transparent;
   }
   nav.primary a.nav-link:hover{border-bottom-color:var(--orange);}
   .btn{
     display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--ink);
-    font-family:'Poppins',sans-serif;font-weight:700;font-size:0.92rem;padding:11px 20px;border-radius:999px;
+    font-family:'Open Sans',sans-serif;font-weight:700;font-size:0.92rem;padding:11px 20px;border-radius:999px;
     text-decoration:none;border:2px solid var(--ink);transition:transform .15s ease, box-shadow .15s ease;
   }
   .btn:hover{transform:translateY(-2px);box-shadow:3px 4px 0 var(--ink);}
@@ -84,7 +84,7 @@
   }
   .mobile-menu.open{display:flex;}
   .mobile-menu a{
-    font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:700;
+    font-family:'Open Sans',sans-serif;font-size:0.95rem;font-weight:700;
     color:var(--ink);text-decoration:none;padding:12px 4px;
     border-bottom:1px solid var(--line);
   }
