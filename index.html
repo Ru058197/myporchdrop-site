@@ -7,17 +7,17 @@
 <meta name="description" content="The everyday chaos of getting stuff delivered to your door: documented, measured, and occasionally fixed by PorchDrop.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --teal:#1D828D;
     --teal-dark:#15636C;
     --orange:#FFAF5E;
     --orange-dark:#E8923C;
-    --cream:#FBFAF8;
+    --cream:#F5F0E8;
     --paper:#F3EFE6;
-    --ink:#19181C;
-    --ink-soft:#4A4950;
+    --ink:#102523;
+    --ink-soft:#7E938F;
     --peach:#FBDDC0;
     --rec:#E2553A;
     --line: rgba(25,24,28,0.12);
@@ -30,7 +30,7 @@
     margin:0;
     background:var(--cream);
     color:var(--ink);
-    font-family:'Inter',sans-serif;
+    font-family:'Open Sans',sans-serif;
     font-size:16px;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
@@ -38,9 +38,9 @@
   img{max-width:100%;display:block;}
   a{color:inherit;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
-  h1,h2,h3{font-family:'Inter',sans-serif;font-weight:800;line-height:1.08;margin:0;letter-spacing:-0.02em;}
+  h1,h2,h3{font-family:'League Spartan',sans-serif;font-weight:800;line-height:1.08;margin:0;letter-spacing:-0.02em;}
   .eyebrow{
-    font-family:'Inter',sans-serif;
+    font-family:'Open Sans',sans-serif;
     font-size:0.72rem;
     letter-spacing:0.14em;
     text-transform:uppercase;
@@ -63,13 +63,13 @@
     padding:16px 28px;max-width:1180px;margin:0 auto;
   }
   .logo{
-    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.5rem;
+    font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.5rem;
     text-decoration:none;letter-spacing:-0.02em;
   }
   .logo span{color:var(--orange-dark);}
   nav.primary{display:flex;align-items:center;gap:28px;}
   nav.primary a{
-    font-family:'Inter',sans-serif;font-size:0.78rem;text-transform:uppercase;
+    font-family:'Open Sans',sans-serif;font-size:0.78rem;text-transform:uppercase;
     letter-spacing:0.08em;text-decoration:none;color:var(--ink);font-weight:700;
     padding-bottom:2px;border-bottom:2px solid transparent;
   }
@@ -77,7 +77,7 @@
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--orange);color:var(--ink);
-    font-family:'Inter',sans-serif;font-weight:700;font-size:0.92rem;
+    font-family:'Open Sans',sans-serif;font-weight:700;font-size:0.92rem;
     padding:11px 20px;border-radius:999px;text-decoration:none;
     border:2px solid var(--ink);
     transition:transform .15s ease, box-shadow .15s ease;
@@ -100,7 +100,7 @@
   .hero .dek{font-size:1.15rem;color:var(--ink-soft);max-width:520px;margin-bottom:30px;}
   .hero-ctas{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
   .text-link{
-    font-family:'Inter',sans-serif;font-size:0.85rem;text-decoration:underline;
+    font-family:'Open Sans',sans-serif;font-size:0.85rem;text-decoration:underline;
     text-decoration-color:var(--orange-dark);font-weight:700;
   }
 
@@ -122,7 +122,7 @@
     position:absolute;top:10px;right:10px;z-index:4;
     display:flex;align-items:center;gap:5px;
     background:rgba(25,24,28,0.55);color:#fff;
-    font-family:'Inter',sans-serif;font-size:0.62rem;letter-spacing:0.06em;
+    font-family:'Open Sans',sans-serif;font-size:0.62rem;letter-spacing:0.06em;
     padding:4px 9px 4px 7px;border-radius:999px;
   }
   .rec-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--rec);animation:pulse 1.6s infinite;}
@@ -131,7 +131,7 @@
     position:absolute;left:0;bottom:0;right:0;z-index:4;
     background:linear-gradient(0deg, rgba(25,24,28,0.88), rgba(25,24,28,0));
     color:#fff;padding:26px 16px 12px;
-    font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.04em;
+    font-family:'Open Sans',sans-serif;font-size:0.72rem;letter-spacing:0.04em;
   }
   .proof-card .stamp b{display:block;font-size:0.78rem;letter-spacing:0.08em;color:var(--orange);margin-bottom:2px;}
   .proof-card.is-quote{background:var(--ink);padding:0;}
@@ -140,28 +140,28 @@
     padding:10px 18px 0 40px;
   }
   .proof-card.is-quote .stamp-top span{
-    font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.08em;
+    font-family:'Open Sans',sans-serif;font-size:0.7rem;letter-spacing:0.08em;
     color:var(--orange);text-transform:uppercase;
   }
   .proof-card.is-quote blockquote{
-    margin:14px 18px 20px;color:#fff;font-family:'Inter',sans-serif;
+    margin:14px 18px 20px;color:#fff;font-family:'Open Sans',sans-serif;
     font-size:1.02rem;line-height:1.6;
   }
   .proof-card.is-quote footer{
-    margin:0 18px 18px;font-family:'Inter',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.6);
+    margin:0 18px 18px;font-family:'Open Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.6);
   }
   .proof-card.is-stat{background:var(--paper);}
   .proof-card.is-stat .stamp-top{padding:10px 18px 0 40px;}
   .proof-card.is-stat .stamp-top span{
-    font-family:'Inter',sans-serif;font-size:0.68rem;letter-spacing:0.08em;color:var(--teal-dark);text-transform:uppercase;font-weight:700;
+    font-family:'Open Sans',sans-serif;font-size:0.68rem;letter-spacing:0.08em;color:var(--teal-dark);text-transform:uppercase;font-weight:700;
   }
   .proof-card.is-stat .big{
-    font-family:'Inter',sans-serif;font-weight:800;font-size:2.6rem;color:var(--ink);
+    font-family:'League Spartan',sans-serif;font-weight:800;font-size:2.6rem;color:var(--ink);
     margin:6px 18px 0;line-height:1;
   }
   .proof-card.is-stat p{margin:10px 18px 18px;font-size:0.92rem;color:var(--ink-soft);}
   .proof-card.is-stat .src{
-    margin:0 18px 16px;font-family:'Inter',sans-serif;font-size:0.65rem;color:var(--ink-soft);opacity:0.7;
+    margin:0 18px 16px;font-family:'Open Sans',sans-serif;font-size:0.65rem;color:var(--ink-soft);opacity:0.7;
   }
 
   .burst{
@@ -171,7 +171,7 @@
   .burst svg{display:block;}
   .burst-text{
     position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    text-align:center;font-family:'Inter',sans-serif;font-weight:900;
+    text-align:center;font-family:'League Spartan',sans-serif;font-weight:900;
     font-size:0.8rem;line-height:1.3;letter-spacing:0.03em;text-transform:uppercase;
     color:var(--ink);padding:18px;
   }
@@ -221,7 +221,7 @@
   .ba-block:last-child{margin-bottom:0;}
   .photo-card .cap{
     padding:14px 16px;background:var(--cream);
-    font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--ink);
+    font-family:'Open Sans',sans-serif;font-size:0.82rem;color:var(--ink);
   }
 
   /* ---------- ORIGIN TEASER ---------- */
@@ -230,26 +230,26 @@
     display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;
   }
   .origin .date-badge{
-    font-family:'Inter',sans-serif;background:var(--ink);color:var(--orange);
+    font-family:'Open Sans',sans-serif;background:var(--ink);color:var(--orange);
     padding:14px 18px;border-radius:12px;font-size:0.85rem;text-align:center;white-space:nowrap;
   }
   .origin h3{color:#fff;font-size:1.7rem;margin-bottom:14px;}
   .origin p{color:rgba(255,255,255,0.88);font-size:1.05rem;max-width:560px;}
-  .origin a{color:var(--orange);font-family:'Inter',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;}
+  .origin a{color:var(--orange);font-family:'Open Sans',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;}
   @media (max-width:700px){.origin{grid-template-columns:1fr;padding:32px;}}
 
   /* ---------- SPEC SHEET ---------- */
   .spec-wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;}
   @media (max-width:860px){.spec-wrap{grid-template-columns:1fr;}}
-  .spec-table{font-family:'Inter',sans-serif;font-size:0.92rem;border-top:1px solid var(--line);}
+  .spec-table{font-family:'Open Sans',sans-serif;font-size:0.92rem;border-top:1px solid var(--line);}
   .spec-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);gap:20px;}
   .spec-row .k{color:var(--ink-soft);letter-spacing:0.05em;}
   .spec-row .v{font-weight:700;text-align:right;}
   .price-tag{
     display:flex;align-items:baseline;gap:10px;margin:26px 0 18px;
   }
-  .price-tag .amt{font-family:'Inter',sans-serif;font-weight:800;font-size:2.6rem;}
-  .price-tag .unit{color:var(--ink-soft);font-family:'Inter',sans-serif;font-size:0.85rem;}
+  .price-tag .amt{font-family:'League Spartan',sans-serif;font-weight:800;font-size:2.6rem;}
+  .price-tag .unit{color:var(--ink-soft);font-family:'Open Sans',sans-serif;font-size:0.85rem;}
 
   /* ---------- FAQ ---------- */
   .faq-item{
@@ -259,7 +259,7 @@
   }
   .faq-item:hover{background:rgba(251,250,248,0.06);border-color:rgba(251,250,248,0.22);}
   .faq-item summary{
-    font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;cursor:pointer;
+    font-family:'Open Sans',sans-serif;font-weight:700;font-size:1.05rem;cursor:pointer;
     list-style:none;display:flex;justify-content:space-between;align-items:center;
     padding:18px 0;color:#fff;gap:20px;
   }
@@ -278,15 +278,36 @@
   footer.site-footer{background:var(--ink);color:var(--cream);padding:64px 0 32px;}
   .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:48px;}
   @media (max-width:760px){.footer-grid{grid-template-columns:1fr;}}
-  .footer-grid h4{font-family:'Inter',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+  .footer-grid h4{font-family:'Open Sans',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
   .footer-grid p,.footer-grid a{color:rgba(251,250,248,0.75);font-size:0.92rem;}
   .subscribe-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
   .subscribe-row input{
     flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid rgba(251,250,248,0.25);
-    background:transparent;color:#fff;font-family:'Inter',sans-serif;
+    background:transparent;color:#fff;font-family:'Open Sans',sans-serif;
   }
   .subscribe-row input::placeholder{color:rgba(251,250,248,0.45);}
   .fine-print{border-top:1px solid rgba(251,250,248,0.15);padding-top:24px;font-size:0.8rem;color:rgba(251,250,248,0.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- TODAY'S OBSERVATION ---------- */
+  .observation-card{
+    max-width:640px;margin:0 auto;background:var(--ink);border-radius:var(--radius);
+    padding:30px 32px 26px;position:relative;overflow:hidden;
+    box-shadow:0 14px 30px -10px rgba(25,24,28,0.35);
+  }
+  .observation-card .obs-top{
+    display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;
+  }
+  .observation-card .obs-top span{
+    font-family:'Open Sans',sans-serif;font-size:0.7rem;letter-spacing:0.1em;
+    color:var(--orange);text-transform:uppercase;font-weight:700;
+  }
+  .observation-card .obs-date{color:rgba(251,250,248,0.5)!important;font-weight:500!important;}
+  .observation-card p{
+    color:#fff;font-family:'Open Sans',sans-serif;font-size:1.15rem;line-height:1.55;margin:0;
+  }
+  .observation-card .obs-sub{
+    margin-top:14px;color:rgba(251,250,248,0.55);font-size:0.88rem;
+  }
 </style>
 </head>
 <body>
@@ -358,6 +379,24 @@
         <p>orders happen on DoorDash every single day. Some land on a PorchDrop. Most still land on the ground.</p>
         <div class="src">SOURCE: DERIVED FROM DOORDASH Q1 2026 EARNINGS</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="observation">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Today's observation</span>
+      <h2>One thing we noticed today.</h2>
+      <p>A new one every day, straight from the front seat. No theme, no agenda, just whatever stood out.</p>
+    </div>
+    <div class="observation-card reveal">
+      <div class="obs-top">
+        <span>Field Log</span>
+        <span class="obs-date" id="obs-date">&mdash;</span>
+      </div>
+      <p id="obs-text">Loading today's observation...</p>
+      <div class="obs-sub">Filed by Russ, somewhere between deliveries.</div>
     </div>
   </div>
 </section>
@@ -475,7 +514,7 @@
       <p style="color:var(--ink-soft);font-size:0.9rem;margin-top:22px;">We're a few weeks out from relaunching. Leave your email and we'll let you know the moment backing opens, no spam, just the launch date.</p>
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:14px;">
         <form action="https://myporchdrop.us15.list-manage.com/subscribe/post?u=5f2ee32a6f1c39ecd1f77d104&amp;id=20f4992905&amp;f_id=00b9c2e1f0" method="post" target="_blank" novalidate class="subscribe-row" style="max-width:420px;">
-          <input type="email" name="EMAIL" placeholder="you@email.com" required style="flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:'Inter',sans-serif;">
+          <input type="email" name="EMAIL" placeholder="you@email.com" required style="flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:'Open Sans',sans-serif;">
           <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_5f2ee32a6f1c39ecd1f77d104_20f4992905" tabindex="-1" value=""></div>
           <button type="submit" class="btn" style="border:none;cursor:pointer;">Notify me</button>
         </form>
@@ -531,6 +570,7 @@
       <div>
         <h4>The Drop</h4>
         <p><a href="#data">The Data</a></p>
+        <p><a href="#observation">Today's Observation</a></p>
         <p><a href="#field-notes">Field Notes</a></p>
         <p><a href="origin-story.html">Origin Story</a></p>
       </div>
@@ -556,6 +596,384 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
   }, {threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+  // Today's Observation — rotates daily based on the date, no backend needed.
+  // To add more, just add a new string to this array. The more you add, the longer before it repeats.
+  const observations = [
+    "Coffee cups get placed farther from the door than food. Probably because nobody wants to spill them. Funny how we protect the drink more than the meal.",
+    "Most porches have at least one welcome mat and zero actual places to put something down.",
+    "Drivers spend more time deciding where to leave your order than you spent deciding what to order.",
+    "A package leaning against the door is doing its best impression of a doorstop.",
+    "Nobody has ever said \"just leave it on the ground\" out loud. And yet, here we are.",
+    "The average porch has more decorative pumpkins than actual flat surfaces.",
+    "If a raccoon can reach it, so can your neighbor's dog.",
+    "Every doorbell camera has caught a delivery bag getting mistaken for a doormat at least once.",
+    "Drivers ring twice: once to deliver, once to confirm gravity still works.",
+    "Somewhere right now, a salad is sweating on a brick step.",
+    "A screen door is not a shelf. It just plays one on camera.",
+    "The welcome mat says \"Welcome.\" The delivery bag says \"I'll believe it when I see somewhere to put this.\"",
+    "Ring footage is basically a nature documentary about porches, if the wildlife were paper bags.",
+    "Half of all deliveries end up balanced on a windowsill like a house plant that didn't ask for this.",
+    "Nobody plans for where the food goes. The food just goes.",
+    "A porch light left on is a nice gesture. It does not, however, hold a pizza.",
+    "The mailbox was never built for a rotisserie chicken, and yet.",
+    "Every driver has a mental ranking of \"good porches\" and \"concrete.\"",
+    "Rain doesn't check the delivery app before it starts.",
+    "A bag left on a step becomes a small experiment in structural engineering by hour two.",
+    "The dog always finds it first. The dog is not on the invoice.",
+    "Some porches have a rocking chair, a side table, and still somehow no flat surface for a delivery.",
+    "Ants do not care about your five-star rating.",
+    "A takeout order left in direct sun for twenty minutes is just a science project now.",
+    "Nobody designs their entryway thinking about the ten seconds a stranger spends there daily.",
+    "A porch swing looks great in photos and holds exactly zero grocery bags.",
+    "Drivers notice the little details: a mat, a light, a spot that isn't the ground. Homeowners rarely do.",
+    "The bag doesn't know it's expensive. It just knows it's on the ground now.",
+    "A flowerpot makes a lovely home for aphids and, apparently, your dinner.",
+    "There's a very specific kind of dread in seeing a soup container tilted sideways on a step.",
+    "Every porch has a \"spot.\" Most of the time, that spot is just wherever gravity decided.",
+    "A door mat that says \"Go Away\" still gets a delivery bag placed directly on top of it daily.",
+    "Some houses have stairs so narrow the only option is the ground. Every time.",
+    "A cardboard box left in dew overnight turns back into pulp by morning.",
+    "The porch light attracts moths. The porch floor attracts everything else.",
+    "Somewhere, a bag of ice is melting directly onto a welcome mat right now.",
+    "A driver's job ends the second the app says delivered. Gravity's job just started.",
+    "Every neighborhood has one house where the driver visibly sighs before getting out of the car.",
+    "The mail carrier figured out the mailbox decades ago. Food delivery never got the memo.",
+    "A garden gnome has never once volunteered to hold your order, but it ends up next to it anyway.",
+    "A rice bowl order left on next to the mailbox starts sliding the moment the porch isn't perfectly level.",
+    "A sushi order left on the top step waits patiently, the way only cardboard can.",
+    "An Amazon box left on a rocking chair becomes today's unplanned centerpiece.",
+    "A sushi order left on a patch of gravel becomes a snack for whatever's living in the bushes.",
+    "A rotisserie chicken left on the top step gets left there long enough to become part of the decor.",
+    "A pastry box left on the top step ends up warmer, colder, or wetter than it started.",
+    "A grocery bag left on the edge of a planter gets left there long enough to become part of the decor.",
+    "A sushi order left on a folded lawn chair tips over the second the wind picks up.",
+    "A stack of pho containers left on a folded lawn chair gets mistaken for trash by 8 a.m.",
+    "A bag of tamales left on a windowsill ends up warmer, colder, or wetter than it started.",
+    "A rotisserie chicken left on the edge of a planter sits there until someone trips on it.",
+    "A bag of donuts left on a crack in the pavement sits there until someone trips on it.",
+    "A pack of paper towels left on a flower bed becomes today's unplanned centerpiece.",
+    "A hot coffee order left on the edge of a planter gets rained on within the hour.",
+    "An Amazon box left on a folded lawn chair becomes today's unplanned centerpiece.",
+    "A bag of dog food left on a rocking chair tips over the second the wind picks up.",
+    "A smoothie left on a folded lawn chair gets mistaken for trash by 8 a.m.",
+    "A prescription bag left on the bottom stair waits patiently, the way only cardboard can.",
+    "A case of soda left on the threshold turns into a cautionary tale in the next Ring clip.",
+    "A sub sandwich order left on a rocking chair just kind of exists there, unclaimed, for a while.",
+    "A bag of burgers left on a porch swing ends up warmer, colder, or wetter than it started.",
+    "A grocery bag left on a folded lawn chair just kind of exists there, unclaimed, for a while.",
+    "A crate of eggs left on the bottom stair looks like evidence at a very low-stakes crime scene.",
+    "A bag of Thai food left on a stack of newspapers quietly becomes someone else's problem by noon.",
+    "A smoothie left on a flower bed gets nudged an inch closer to the edge with every gust.",
+    "A pastry box left on a porch swing looks like evidence at a very low-stakes crime scene.",
+    "A birthday cake left on the bottom stair gets left there long enough to become part of the decor.",
+    "A rotisserie chicken left on the top step waits patiently, the way only cardboard can.",
+    "A rice bowl order left on the threshold becomes the neighborhood dog's new favorite discovery.",
+    "A case of protein shakes left on a folded lawn chair turns into a cautionary tale in the next Ring clip.",
+    "A smoothie left on the top step gets photographed for a very different reason than intended.",
+    "A bag of wings left on the top step gets mistaken for trash by 8 a.m.",
+    "A hot coffee order left on a folded lawn chair turns into a cautionary tale in the next Ring clip.",
+    "A bag of donuts left on bare concrete becomes the neighborhood dog's new favorite discovery.",
+    "A bag of tacos left on the porch light's shadow becomes the neighborhood dog's new favorite discovery.",
+    "A bag of ice left on the base of a column tips over the second the wind picks up.",
+    "A case of protein shakes left on a windowsill becomes a snack for whatever's living in the bushes.",
+    "A bag of donuts left on next to the mailbox ends up warmer, colder, or wetter than it started.",
+    "A bag of tamales left on bare concrete draws a curious squirrel within the minute.",
+    "A grocery bag left on a porch swing turns into a cautionary tale in the next Ring clip.",
+    "A bag of tamales left on the edge of a planter gets photographed for a very different reason than intended.",
+    "A bouquet left on a crack in the pavement waits patiently, the way only cardboard can.",
+    "A wine delivery left on a crack in the pavement becomes the neighborhood dog's new favorite discovery.",
+    "A bag of bagels left on next to a garden gnome sits there until someone trips on it.",
+    "A grocery bag left on a porch swing sits there until someone trips on it.",
+    "A stack of pho containers left on next to a garden gnome melts before anyone notices.",
+    "A case of protein shakes left on a folded lawn chair gets rained on within the hour.",
+    "A crate of produce left on a stack of newspapers melts before anyone notices.",
+    "A birthday cake left on a crack in the pavement waits patiently, the way only cardboard can.",
+    "A fruit box left on the base of a column becomes today's unplanned centerpiece.",
+    "A rice bowl order left on next to the mailbox gets nudged an inch closer to the edge with every gust.",
+    "A sushi order left on the porch light's shadow waits patiently, the way only cardboard can.",
+    "A bag of tamales left on bare concrete starts sliding the moment the porch isn't perfectly level.",
+    "A bag of tamales left on a flower bed draws a curious squirrel within the minute.",
+    "A bag of tamales left on a windowsill becomes a snack for whatever's living in the bushes.",
+    "A smoothie left on the doormat turns into a cautionary tale in the next Ring clip.",
+    "A bag of ice left on a flower bed looks like evidence at a very low-stakes crime scene.",
+    "A sushi order left on a flower bed melts before anyone notices.",
+    "A birthday cake left on the edge of a planter tips over the second the wind picks up.",
+    "A fruit box left on the base of a column melts before anyone notices.",
+    "A smoothie left on the doormat quietly becomes someone else's problem by noon.",
+    "A bag of bagels left on next to the mailbox gets photographed for a very different reason than intended.",
+    "A package of steaks left on the base of a column becomes the neighborhood dog's new favorite discovery.",
+    "A bag of wings left on a flower bed tips over the second the wind picks up.",
+    "A case of protein shakes left on the porch light's shadow draws a curious squirrel within the minute.",
+    "A bag of wings left on a stack of newspapers attracts every ant within twenty feet.",
+    "A birthday cake left on a flower bed looks like evidence at a very low-stakes crime scene.",
+    "A crate of produce left on the bottom stair gets rained on within the hour.",
+    "A crate of eggs left on the welcome mat becomes a snack for whatever's living in the bushes.",
+    "A crate of eggs left on a rocking chair sits there until someone trips on it.",
+    "A pack of paper towels left on the welcome mat gets nudged an inch closer to the edge with every gust.",
+    "A hot coffee order left on the top step gets photographed for a very different reason than intended.",
+    "A crate of eggs left on a rocking chair gets rained on within the hour.",
+    "A package of steaks left on next to a garden gnome waits patiently, the way only cardboard can.",
+    "A pack of paper towels left on a patch of gravel looks like evidence at a very low-stakes crime scene.",
+    "A stack of pho containers left on the base of a column becomes a snack for whatever's living in the bushes.",
+    "A bag of burgers left on bare concrete ends up warmer, colder, or wetter than it started.",
+    "A bag of dog food left on a patch of gravel draws a curious squirrel within the minute.",
+    "A package of steaks left on the welcome mat melts before anyone notices.",
+    "A wine delivery left on the bottom stair gets photographed for a very different reason than intended.",
+    "A bag of dog food left on the base of a column becomes the neighborhood dog's new favorite discovery.",
+    "A bag of Thai food left on a rocking chair becomes the neighborhood dog's new favorite discovery.",
+    "A grocery bag left on next to a garden gnome tips over the second the wind picks up.",
+    "A stack of pho containers left on the bottom stair becomes a snack for whatever's living in the bushes.",
+    "A bag of Chinese food left on the doormat draws a curious squirrel within the minute.",
+    "A pizza box left on the bottom stair becomes the neighborhood dog's new favorite discovery.",
+    "A grocery bag left on a flower bed starts sliding the moment the porch isn't perfectly level.",
+    "A bag of dog food left on the bottom stair gets rained on within the hour.",
+    "A case of soda left on the threshold attracts every ant within twenty feet.",
+    "A bag of tamales left on the porch light's shadow starts sliding the moment the porch isn't perfectly level.",
+    "A grocery bag left on a porch swing gets rained on within the hour.",
+    "A bouquet left on the welcome mat sits there until someone trips on it.",
+    "A sub sandwich order left on next to the mailbox quietly becomes someone else's problem by noon.",
+    "A bag of wings left on a rocking chair sits there until someone trips on it.",
+    "A bouquet left on the welcome mat melts before anyone notices.",
+    "An Amazon box left on a patch of gravel sits there until someone trips on it.",
+    "A case of soda left on the doormat becomes a snack for whatever's living in the bushes.",
+    "A bag of tacos left on the railing becomes a snack for whatever's living in the bushes.",
+    "A bag of donuts left on a patch of gravel ends up warmer, colder, or wetter than it started.",
+    "A rice bowl order left on the railing waits patiently, the way only cardboard can.",
+    "A pastry box left on next to the mailbox gets mistaken for trash by 8 a.m.",
+    "A package of steaks left on the porch light's shadow becomes today's unplanned centerpiece.",
+    "A crate of eggs left on a crack in the pavement gets nudged an inch closer to the edge with every gust.",
+    "A bouquet left on the edge of a planter sits there until someone trips on it.",
+    "A crate of eggs left on a patch of gravel melts before anyone notices.",
+    "A bag of Thai food left on a porch swing quietly becomes someone else's problem by noon.",
+    "A pizza box left on next to the mailbox gets rained on within the hour.",
+    "A birthday cake left on the bottom stair quietly becomes someone else's problem by noon.",
+    "A case of water left on the edge of a planter gets mistaken for trash by 8 a.m.",
+    "A rice bowl order left on a patch of gravel gets nudged an inch closer to the edge with every gust.",
+    "A bag of wings left on a flower bed waits patiently, the way only cardboard can.",
+    "A sushi order left on next to a garden gnome becomes a snack for whatever's living in the bushes.",
+    "A wine delivery left on a windowsill tips over the second the wind picks up.",
+    "A bag of pastries left on the porch light's shadow waits patiently, the way only cardboard can.",
+    "A bag of tacos left on the top step turns into a cautionary tale in the next Ring clip.",
+    "A rice bowl order left on the base of a column gets nudged an inch closer to the edge with every gust.",
+    "A bag of pastries left on the doormat gets photographed for a very different reason than intended.",
+    "A bag of Thai food left on a patch of gravel waits patiently, the way only cardboard can.",
+    "A bag of wings left on a patch of gravel ends up warmer, colder, or wetter than it started.",
+    "A crate of eggs left on the railing waits patiently, the way only cardboard can.",
+    "A bag of dog food left on the porch light's shadow sits there until someone trips on it.",
+    "A pastry box left on a flower bed starts sliding the moment the porch isn't perfectly level.",
+    "A bag of Thai food left on the threshold attracts every ant within twenty feet.",
+    "A bag of burgers left on a crack in the pavement attracts every ant within twenty feet.",
+    "A prescription bag left on a stack of newspapers tips over the second the wind picks up.",
+    "A birthday cake left on a rocking chair sits there until someone trips on it.",
+    "A crate of produce left on next to the mailbox turns into a cautionary tale in the next Ring clip.",
+    "A stack of pho containers left on a flower bed starts sliding the moment the porch isn't perfectly level.",
+    "A case of protein shakes left on a porch swing ends up warmer, colder, or wetter than it started.",
+    "A bag of ice left on a crack in the pavement gets nudged an inch closer to the edge with every gust.",
+    "A bag of tamales left on the threshold gets left there long enough to become part of the decor.",
+    "A bag of dog food left on a rocking chair looks like evidence at a very low-stakes crime scene.",
+    "A grocery bag left on a rocking chair melts before anyone notices.",
+    "A bag of Chinese food left on the edge of a planter turns into a cautionary tale in the next Ring clip.",
+    "A bag of Thai food left on the welcome mat starts sliding the moment the porch isn't perfectly level.",
+    "A bag of Chinese food left on a patch of gravel quietly becomes someone else's problem by noon.",
+    "A bag of donuts left on a patch of gravel attracts every ant within twenty feet.",
+    "A case of water left on next to a garden gnome tips over the second the wind picks up.",
+    "A grocery bag left on the railing gets photographed for a very different reason than intended.",
+    "A rotisserie chicken left on a porch swing gets photographed for a very different reason than intended.",
+    "A bouquet left on a crack in the pavement gets photographed for a very different reason than intended.",
+    "A bag of tamales left on next to the mailbox waits patiently, the way only cardboard can.",
+    "A bag of pastries left on a folded lawn chair draws a curious squirrel within the minute.",
+    "A rice bowl order left on the top step gets photographed for a very different reason than intended.",
+    "A sushi order left on a porch swing gets left there long enough to become part of the decor.",
+    "A smoothie left on the railing melts before anyone notices.",
+    "A grocery bag left on the railing attracts every ant within twenty feet.",
+    "A stack of pho containers left on the top step gets photographed for a very different reason than intended.",
+    "A case of water left on the porch light's shadow melts before anyone notices.",
+    "A bag of Chinese food left on the edge of a planter gets left there long enough to become part of the decor.",
+    "A wine delivery left on the base of a column sits there until someone trips on it.",
+    "A rotisserie chicken left on a patch of gravel ends up warmer, colder, or wetter than it started.",
+    "A case of water left on a porch swing gets photographed for a very different reason than intended.",
+    "A sushi order left on a porch swing becomes a snack for whatever's living in the bushes.",
+    "A hot coffee order left on a stack of newspapers gets nudged an inch closer to the edge with every gust.",
+    "A prescription bag left on a stack of newspapers turns into a cautionary tale in the next Ring clip.",
+    "A bag of pastries left on a porch swing gets photographed for a very different reason than intended.",
+    "A package of steaks left on the welcome mat gets photographed for a very different reason than intended.",
+    "A rotisserie chicken left on the welcome mat melts before anyone notices.",
+    "A bag of pastries left on the edge of a planter becomes a snack for whatever's living in the bushes.",
+    "A bag of pastries left on the bottom stair ends up warmer, colder, or wetter than it started.",
+    "A bag of Thai food left on a flower bed gets left there long enough to become part of the decor.",
+    "A case of protein shakes left on the edge of a planter starts sliding the moment the porch isn't perfectly level.",
+    "A bag of pastries left on a stack of newspapers becomes a snack for whatever's living in the bushes.",
+    "A stack of pho containers left on the threshold becomes a snack for whatever's living in the bushes.",
+    "A bouquet left on bare concrete becomes the neighborhood dog's new favorite discovery.",
+    "A sushi order left on next to the mailbox melts before anyone notices.",
+    "A smoothie left on the railing gets left there long enough to become part of the decor.",
+    "A bag of ice left on a windowsill attracts every ant within twenty feet.",
+    "A bag of bagels left on a patch of gravel just kind of exists there, unclaimed, for a while.",
+    "A bag of burgers left on a stack of newspapers gets mistaken for trash by 8 a.m.",
+    "A sub sandwich order left on a porch swing gets rained on within the hour.",
+    "A wine delivery left on the porch light's shadow melts before anyone notices.",
+    "A crate of produce left on a rocking chair looks like evidence at a very low-stakes crime scene.",
+    "A rice bowl order left on next to a garden gnome gets mistaken for trash by 8 a.m.",
+    "A hot coffee order left on the doormat becomes the neighborhood dog's new favorite discovery.",
+    "A six-pack left on the welcome mat looks like evidence at a very low-stakes crime scene.",
+    "A bag of bagels left on the top step draws a curious squirrel within the minute.",
+    "A wine delivery left on a patch of gravel becomes a snack for whatever's living in the bushes.",
+    "A bag of burgers left on a patch of gravel melts before anyone notices.",
+    "A birthday cake left on bare concrete becomes today's unplanned centerpiece.",
+    "A rotisserie chicken left on bare concrete melts before anyone notices.",
+    "A hot coffee order left on a stack of newspapers ends up warmer, colder, or wetter than it started.",
+    "A grocery bag left on a folded lawn chair gets nudged an inch closer to the edge with every gust.",
+    "A birthday cake left on the base of a column starts sliding the moment the porch isn't perfectly level.",
+    "A rice bowl order left on the bottom stair sits there until someone trips on it.",
+    "A bag of donuts left on the base of a column sits there until someone trips on it.",
+    "A rotisserie chicken left on a patch of gravel gets left there long enough to become part of the decor.",
+    "A bag of pastries left on next to the mailbox gets nudged an inch closer to the edge with every gust.",
+    "A bag of pastries left on a folded lawn chair melts before anyone notices.",
+    "A stack of pho containers left on the top step melts before anyone notices.",
+    "A rotisserie chicken left on next to the mailbox becomes the neighborhood dog's new favorite discovery.",
+    "An Amazon box left on bare concrete turns into a cautionary tale in the next Ring clip.",
+    "A sushi order left on the welcome mat waits patiently, the way only cardboard can.",
+    "A bag of burgers left on the bottom stair gets photographed for a very different reason than intended.",
+    "A pizza box left on the porch light's shadow attracts every ant within twenty feet.",
+    "A bag of pastries left on the edge of a planter attracts every ant within twenty feet.",
+    "A crate of eggs left on the top step draws a curious squirrel within the minute.",
+    "A crate of produce left on the top step gets photographed for a very different reason than intended.",
+    "A bag of burgers left on the doormat ends up warmer, colder, or wetter than it started.",
+    "A sub sandwich order left on the bottom stair starts sliding the moment the porch isn't perfectly level.",
+    "A smoothie left on the bottom stair just kind of exists there, unclaimed, for a while.",
+    "A rotisserie chicken left on the base of a column becomes a snack for whatever's living in the bushes.",
+    "A smoothie left on the base of a column sits there until someone trips on it.",
+    "A bag of Chinese food left on the railing just kind of exists there, unclaimed, for a while.",
+    "A bouquet left on the welcome mat draws a curious squirrel within the minute.",
+    "A sushi order left on the bottom stair gets photographed for a very different reason than intended.",
+    "An Amazon box left on the doormat draws a curious squirrel within the minute.",
+    "A bag of donuts left on a patch of gravel just kind of exists there, unclaimed, for a while.",
+    "A sub sandwich order left on the porch light's shadow turns into a cautionary tale in the next Ring clip.",
+    "A case of water left on the edge of a planter becomes a snack for whatever's living in the bushes.",
+    "A hot coffee order left on the top step draws a curious squirrel within the minute.",
+    "A bag of tacos left on a stack of newspapers turns into a cautionary tale in the next Ring clip.",
+    "A smoothie left on a patch of gravel turns into a cautionary tale in the next Ring clip.",
+    "A wine delivery left on bare concrete becomes a snack for whatever's living in the bushes.",
+    "A prescription bag left on the top step becomes today's unplanned centerpiece.",
+    "A grocery bag left on next to the mailbox gets nudged an inch closer to the edge with every gust.",
+    "A crate of produce left on a rocking chair sits there until someone trips on it.",
+    "A bag of pastries left on the railing tips over the second the wind picks up.",
+    "A fruit box left on next to a garden gnome draws a curious squirrel within the minute.",
+    "A case of protein shakes left on bare concrete melts before anyone notices.",
+    "A bag of ice left on the welcome mat draws a curious squirrel within the minute.",
+    "A bag of Thai food left on bare concrete just kind of exists there, unclaimed, for a while.",
+    "A birthday cake left on a crack in the pavement becomes the neighborhood dog's new favorite discovery.",
+    "A bag of bagels left on the threshold tips over the second the wind picks up.",
+    "A bag of Chinese food left on the welcome mat looks like evidence at a very low-stakes crime scene.",
+    "A bag of Chinese food left on bare concrete tips over the second the wind picks up.",
+    "A bag of dog food left on the welcome mat just kind of exists there, unclaimed, for a while.",
+    "A crate of produce left on a rocking chair attracts every ant within twenty feet.",
+    "A bag of tamales left on bare concrete becomes today's unplanned centerpiece.",
+    "A smoothie left on a rocking chair gets left there long enough to become part of the decor.",
+    "A wine delivery left on a windowsill gets photographed for a very different reason than intended.",
+    "An Amazon box left on a windowsill just kind of exists there, unclaimed, for a while.",
+    "A birthday cake left on next to a garden gnome gets photographed for a very different reason than intended.",
+    "A case of soda left on a patch of gravel looks like evidence at a very low-stakes crime scene.",
+    "A bag of dog food left on a rocking chair gets left there long enough to become part of the decor.",
+    "A bag of tacos left on bare concrete waits patiently, the way only cardboard can.",
+    "A prescription bag left on the top step gets mistaken for trash by 8 a.m.",
+    "A pastry box left on the porch light's shadow quietly becomes someone else's problem by noon.",
+    "A bouquet left on a stack of newspapers draws a curious squirrel within the minute.",
+    "A sushi order left on the edge of a planter sits there until someone trips on it.",
+    "A bag of ice left on the bottom stair gets left there long enough to become part of the decor.",
+    "A bag of Chinese food left on a stack of newspapers just kind of exists there, unclaimed, for a while.",
+    "A crate of produce left on the railing starts sliding the moment the porch isn't perfectly level.",
+    "A bag of burgers left on a stack of newspapers draws a curious squirrel within the minute.",
+    "A bag of tamales left on a flower bed gets rained on within the hour.",
+    "A bag of ice left on the top step becomes a snack for whatever's living in the bushes.",
+    "A bag of pastries left on the bottom stair waits patiently, the way only cardboard can.",
+    "A stack of pho containers left on the porch light's shadow looks like evidence at a very low-stakes crime scene.",
+    "A bag of Thai food left on a crack in the pavement sits there until someone trips on it.",
+    "A bag of dog food left on next to a garden gnome attracts every ant within twenty feet.",
+    "A six-pack left on the threshold waits patiently, the way only cardboard can.",
+    "A grocery bag left on the threshold ends up warmer, colder, or wetter than it started.",
+    "A fruit box left on the railing becomes today's unplanned centerpiece.",
+    "A bag of dog food left on the welcome mat gets left there long enough to become part of the decor.",
+    "A bag of bagels left on a crack in the pavement gets nudged an inch closer to the edge with every gust.",
+    "A prescription bag left on bare concrete gets photographed for a very different reason than intended.",
+    "A bag of Chinese food left on a windowsill draws a curious squirrel within the minute.",
+    "A wine delivery left on a folded lawn chair becomes the neighborhood dog's new favorite discovery.",
+    "A bouquet left on a patch of gravel gets nudged an inch closer to the edge with every gust.",
+    "A prescription bag left on the top step gets photographed for a very different reason than intended.",
+    "A bag of burgers left on bare concrete starts sliding the moment the porch isn't perfectly level.",
+    "A bag of Thai food left on a crack in the pavement just kind of exists there, unclaimed, for a while.",
+    "A bag of tacos left on next to the mailbox gets mistaken for trash by 8 a.m.",
+    "A case of soda left on the bottom stair becomes today's unplanned centerpiece.",
+    "A case of protein shakes left on the welcome mat attracts every ant within twenty feet.",
+    "A bag of tamales left on a patch of gravel turns into a cautionary tale in the next Ring clip.",
+    "A bag of Thai food left on next to a garden gnome tips over the second the wind picks up.",
+    "A stack of pho containers left on next to the mailbox sits there until someone trips on it.",
+    "A crate of eggs left on a flower bed turns into a cautionary tale in the next Ring clip.",
+    "A grocery bag left on the edge of a planter gets mistaken for trash by 8 a.m.",
+    "A pizza box left on next to the mailbox ends up warmer, colder, or wetter than it started.",
+    "A rotisserie chicken left on a stack of newspapers sits there until someone trips on it.",
+    "A crate of produce left on a patch of gravel gets left there long enough to become part of the decor.",
+    "A case of water left on a flower bed attracts every ant within twenty feet.",
+    "A hot coffee order left on a patch of gravel becomes today's unplanned centerpiece.",
+    "A bag of dog food left on bare concrete gets photographed for a very different reason than intended.",
+    "A stack of pho containers left on the base of a column melts before anyone notices.",
+    "A pizza box left on the edge of a planter just kind of exists there, unclaimed, for a while.",
+    "A sub sandwich order left on the railing looks like evidence at a very low-stakes crime scene.",
+    "A bag of burgers left on the bottom stair gets nudged an inch closer to the edge with every gust.",
+    "A bag of burgers left on the edge of a planter ends up warmer, colder, or wetter than it started.",
+    "A bag of tacos left on a crack in the pavement just kind of exists there, unclaimed, for a while.",
+    "A sushi order left on the welcome mat becomes a snack for whatever's living in the bushes.",
+    "A case of protein shakes left on a crack in the pavement attracts every ant within twenty feet.",
+    "A crate of produce left on next to a garden gnome gets left there long enough to become part of the decor.",
+    "A rotisserie chicken left on the threshold gets left there long enough to become part of the decor.",
+    "A fruit box left on bare concrete becomes a snack for whatever's living in the bushes.",
+    "A pizza box left on a stack of newspapers gets nudged an inch closer to the edge with every gust.",
+    "A smoothie left on the doormat draws a curious squirrel within the minute.",
+    "A bag of dog food left on a stack of newspapers becomes a snack for whatever's living in the bushes.",
+    "A stack of pho containers left on the porch light's shadow ends up warmer, colder, or wetter than it started.",
+    "A crate of produce left on a stack of newspapers tips over the second the wind picks up.",
+    "A case of protein shakes left on the base of a column gets rained on within the hour.",
+    "A stack of pho containers left on the bottom stair gets left there long enough to become part of the decor.",
+    "A sushi order left on the base of a column sits there until someone trips on it.",
+    "A bag of tacos left on the base of a column sits there until someone trips on it.",
+    "A pastry box left on a windowsill gets mistaken for trash by 8 a.m.",
+    "A six-pack left on bare concrete turns into a cautionary tale in the next Ring clip.",
+    "A rice bowl order left on a flower bed attracts every ant within twenty feet.",
+    "A bag of ice left on the threshold becomes a snack for whatever's living in the bushes.",
+    "A six-pack left on a patch of gravel turns into a cautionary tale in the next Ring clip.",
+    "A rotisserie chicken left on a stack of newspapers starts sliding the moment the porch isn't perfectly level.",
+    "A fruit box left on the threshold turns into a cautionary tale in the next Ring clip.",
+    "A bag of ice left on a flower bed melts before anyone notices.",
+    "A package of steaks left on a crack in the pavement tips over the second the wind picks up.",
+    "A prescription bag left on bare concrete becomes the neighborhood dog's new favorite discovery.",
+    "A hot coffee order left on a crack in the pavement attracts every ant within twenty feet.",
+    "A sushi order left on the bottom stair becomes a snack for whatever's living in the bushes.",
+    "A fruit box left on the edge of a planter turns into a cautionary tale in the next Ring clip.",
+    "A bag of dog food left on the threshold becomes the neighborhood dog's new favorite discovery.",
+    "A bag of wings left on the welcome mat gets left there long enough to become part of the decor.",
+    "A bag of burgers left on bare concrete gets mistaken for trash by 8 a.m.",
+    "A bag of bagels left on a windowsill turns into a cautionary tale in the next Ring clip.",
+    "A smoothie left on a windowsill gets photographed for a very different reason than intended.",
+    "A bag of dog food left on the top step quietly becomes someone else's problem by noon.",
+    "A bag of Chinese food left on a rocking chair gets photographed for a very different reason than intended.",
+    "A bag of Chinese food left on the base of a column gets mistaken for trash by 8 a.m.",
+    "A crate of produce left on the threshold gets photographed for a very different reason than intended.",
+    "A hot coffee order left on the welcome mat quietly becomes someone else's problem by noon.",
+    "A smoothie left on the welcome mat ends up warmer, colder, or wetter than it started.",
+    "An Amazon box left on the bottom stair turns into a cautionary tale in the next Ring clip.",
+    "A bag of bagels left on the railing gets left there long enough to become part of the decor.",
+    "A case of protein shakes left on next to the mailbox draws a curious squirrel within the minute.",
+    "A six-pack left on the welcome mat just kind of exists there, unclaimed, for a while."
+  ];
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0)) / 86400000);
+  const todayObs = observations[dayOfYear % observations.length];
+  const obsText = document.getElementById('obs-text');
+  const obsDate = document.getElementById('obs-date');
+  if(obsText) obsText.textContent = todayObs;
+  if(obsDate) obsDate.textContent = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 </script>
 
 </body>
