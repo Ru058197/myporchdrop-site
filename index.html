@@ -281,6 +281,8 @@
   .faq-item summary .icon::after{content:"+";}
   .faq-item[open] summary .icon{transform:rotate(45deg);}
   .faq-item p{color:rgba(255,255,255,0.88);margin:0 0 20px;max-width:680px;line-height:1.6;}
+  .faq-item ul{color:rgba(255,255,255,0.88);margin:0 0 20px;max-width:680px;line-height:1.6;padding-left:20px;}
+  .faq-item ul li{margin-bottom:8px;}
 
   /* ---------- FOOTER ---------- */
   footer.site-footer{background:var(--ink);color:var(--cream);padding:64px 0 32px;}
@@ -316,6 +318,20 @@
   .observation-card .obs-sub{
     margin-top:14px;color:rgba(251,250,248,0.55);font-size:0.88rem;
   }
+
+  /* ---------- PRESS FEATURE ---------- */
+  .press-feature{
+    background:var(--ink);color:#fff;border-radius:24px;padding:40px 50px;
+    display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+  }
+  .press-feature .press-badge{
+    font-family:'Open Sans',sans-serif;background:var(--orange);color:var(--ink);
+    padding:10px 16px;border-radius:999px;font-size:0.72rem;font-weight:700;
+    letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;display:inline-block;
+  }
+  .press-feature p{color:rgba(255,255,255,0.9);font-family:'Open Sans',sans-serif;font-size:1.05rem;max-width:520px;margin:14px 0 0;}
+  .press-feature a{color:var(--orange);font-family:'Open Sans',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;margin-top:12px;display:inline-block;}
+  @media (max-width:700px){.press-feature{padding:30px;flex-direction:column;align-items:flex-start;}}
 </style>
 </head>
 <body>
@@ -345,9 +361,9 @@
           <svg width="200" height="185" viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg">
             <path fill="#1D828D" stroke="#15636C" stroke-width="6" stroke-linejoin="round"
               d="M230,18 L255,80 L300,35 L295,100 L355,68 L330,128 L398,115 L358,165 L425,172 L372,208 L428,235 L365,255 L400,300 L335,298 L345,360 L285,335 L270,395 L230,355 L190,395 L175,335 L115,360 L125,298 L60,300 L95,255 L32,235 L88,208 L35,172 L102,165 L62,115 L130,128 L105,68 L165,100 L160,35 L205,80 Z"/>
-            <text x="230" y="165" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Click Here to</text>
-            <text x="230" y="205" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Pre-Launch on</text>
-            <text x="230" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Kickstarter</text>
+            <text x="230" y="165" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Back Us on</text>
+            <text x="230" y="205" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Kickstarter</text>
+            <text x="230" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Right Now</text>
           </svg>
         </div></a>
       </div>
@@ -356,6 +372,21 @@
       <span class="rec-tag"><span class="dot"></span>LIVE CAPTURE</span>
       <img src="images/doordash-confirmation.jpg" alt="Real DoorDash no-contact delivery confirmation showing the order placed on a PorchDrop table">
       <div class="stamp"><b>FRONT DOOR · NO-CONTACT</b>Dasher: Valente · delivered 5:21 PM, right on the table</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="press-feature reveal">
+      <div>
+        <span class="press-badge">As Seen In</span>
+        <p>Homecrux, on the low-tech fix they didn't expect from a former DoorDash driver.</p>
+        <a href="https://www.homecrux.com/porchdrop-protects-food-deliveries-at-your-doorstep/403687/" target="_blank" rel="noopener">Read the feature →</a>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:16px 22px;flex-shrink:0;">
+        <img src="images/logo-homecrux.png" alt="Homecrux logo" style="display:block;height:28px;width:auto;">
+      </div>
     </div>
   </div>
 </section>
@@ -512,7 +543,7 @@
       <p style="color:var(--ink-soft);margin-top:14px;">Designed with one job: give every driver an obvious, clean place to set things down: off the ground, off the mat, away from whatever's living in the mulch.</p>
       <div class="price-tag"><span class="amt">$29.99</span><span class="unit">planned price · patent pending</span></div>
       <div class="spec-table">
-        <div class="spec-row"><span class="k">HOLDS</span><span class="v">75 LBS</span></div>
+        <div class="spec-row"><span class="k">HOLDS</span><span class="v">UP TO 75 LBS</span></div>
         <div class="spec-row"><span class="k">SURFACE</span><span class="v">Weatherproof, easy-clean</span></div>
         <div class="spec-row"><span class="k">LEGS</span><span class="v">Removable</span></div>
         <div class="spec-row"><span class="k">LIP</span><span class="v">Raised perimeter, nothing slides off</span></div>
@@ -529,9 +560,9 @@
           <svg width="185" height="170" viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg">
             <path fill="#1D828D" stroke="#15636C" stroke-width="6" stroke-linejoin="round"
               d="M230,18 L255,80 L300,35 L295,100 L355,68 L330,128 L398,115 L358,165 L425,172 L372,208 L428,235 L365,255 L400,300 L335,298 L345,360 L285,335 L270,395 L230,355 L190,395 L175,335 L115,360 L125,298 L60,300 L95,255 L32,235 L88,208 L35,172 L102,165 L62,115 L130,128 L105,68 L165,100 L160,35 L205,80 Z"/>
-            <text x="230" y="165" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Click Here to</text>
-            <text x="230" y="205" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Pre-Launch on</text>
-            <text x="230" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Kickstarter</text>
+            <text x="230" y="165" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Back Us on</text>
+            <text x="230" y="205" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Kickstarter</text>
+            <text x="230" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Right Now</text>
           </svg>
         </div></a>
       </div>
@@ -552,7 +583,7 @@
       </details>
       <details class="faq-item">
         <summary>Why not just use a side table I already own?<span class="icon"></span></summary>
-        <p>You can, but most porch furniture isn't built to live outside year-round, sit at the right drop height, or survive 75 lbs of someone's entire Costco order. PorchDrop is purpose-built for exactly this one job.</p>
+        <p>You can, but most porch furniture isn't built to live outside year-round, sit at the right drop height, or survive up to 75 lbs of someone's entire Costco order. PorchDrop is purpose-built for exactly this one job.</p>
       </details>
       <details class="faq-item">
         <summary>What's it made of?<span class="icon"></span></summary>
@@ -561,6 +592,41 @@
       <details class="faq-item">
         <summary>Is this just for food delivery?<span class="icon"></span></summary>
         <p>No, it's just as useful for Amazon packages, groceries, and anything else that currently lands on your porch floor. Leave it out and it becomes the default drop spot for everything.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Isn't it just a table?<span class="icon"></span></summary>
+        <p>It has a tabletop. We never claimed otherwise.</p>
+        <p>The difference is that PorchDrop wasn't designed as patio furniture. Every dimension, material, and feature was chosen for one purpose: creating a dedicated destination for deliveries.</p>
+        <ul>
+          <li>Sized for food, groceries, and packages.</li>
+          <li>Built to live outdoors year round.</li>
+          <li>Designed to be highly visible to delivery drivers.</li>
+          <li>Stable enough for heavy deliveries.</li>
+          <li>Engineered as a modular platform for future accessories.</li>
+        </ul>
+        <p style="margin-bottom:0;">The goal was never to invent the first table. The goal was to create the first table designed specifically for modern deliveries.</p>
+      </details>
+      <details class="faq-item">
+        <summary>So... you patented a table?<span class="icon"></span></summary>
+        <p>No. We filed a patent application covering the specific design we created, not the general idea of a table. Patents protect new designs and innovations within existing product categories every day.</p>
+        <p style="margin-bottom:0;">PorchDrop is our approach to solving a familiar problem with a thoughtful design.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why not just keep using the ground?<span class="icon"></span></summary>
+        <p>Because we've accepted it for years, not because it's the best solution. Every day, millions of meals, groceries, and packages are placed directly on porches, sidewalks, and entryways.</p>
+        <p style="margin-bottom:0;">We simply asked a different question: What if there were a better place?</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is PorchDrop modular?<span class="icon"></span></summary>
+        <p>PorchDrop wasn't designed to stop with a tabletop. It was designed as a platform.</p>
+        <p>The Classic is just the beginning. Future accessories are already being developed, including:</p>
+        <ul>
+          <li>Clip-on cup holder for delivery drivers</li>
+          <li>Secure cable lock option</li>
+          <li>Vault cover for added protection</li>
+          <li>Additional accessories as the product evolves</li>
+        </ul>
+        <p style="margin-bottom:0;">Our goal was to create a product that grows over time instead of remaining a single-purpose table.</p>
       </details>
     </div>
   </div>
