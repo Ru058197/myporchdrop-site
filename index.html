@@ -284,6 +284,41 @@
   .faq-item ul{color:rgba(255,255,255,0.88);margin:0 0 20px;max-width:680px;line-height:1.6;padding-left:20px;}
   .faq-item ul li{margin-bottom:8px;}
 
+  /* ---------- FUNDED BANNER + URGENCY ---------- */
+  .funded-banner{
+    background:var(--orange);
+    padding:14px 0;
+  }
+  .funded-banner-inner{
+    display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
+  }
+  .funded-banner-text{
+    font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.15rem;
+    color:var(--ink);letter-spacing:0.01em;text-align:center;
+  }
+  .funded-banner-link{
+    font-family:'Open Sans',sans-serif;font-weight:700;font-size:0.85rem;color:#fff;
+    background:var(--ink);padding:9px 20px;border-radius:999px;text-decoration:none;
+    white-space:nowrap;transition:transform .15s ease;
+  }
+  .funded-banner-link:hover{transform:translateY(-2px);}
+  @media (max-width:700px){
+    .funded-banner-text{font-size:0.95rem;}
+    .funded-banner-inner{gap:10px;}
+  }
+  .urgency-box{
+    display:inline-flex;align-items:center;gap:14px;
+    background:var(--ink);color:#fff;
+    padding:16px 22px;border-radius:14px;
+    margin-top:22px;max-width:480px;
+    border-left:5px solid var(--orange);
+  }
+  .urgency-box .icon{font-size:1.6rem;flex-shrink:0;}
+  .urgency-box p{margin:0;font-family:'Open Sans',sans-serif;font-size:0.95rem;line-height:1.5;color:rgba(255,255,255,0.92);}
+  .urgency-box strong{color:var(--orange);font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.02rem;}
+  @media (max-width:500px){.urgency-box{padding:14px 16px;}}
+
+
   /* ---------- FOOTER ---------- */
   footer.site-footer{background:var(--ink);color:var(--cream);padding:64px 0 32px;}
   .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:48px;}
@@ -336,6 +371,13 @@
 </head>
 <body>
 
+<div class="funded-banner">
+  <div class="wrap funded-banner-inner">
+    <span class="funded-banner-text">FULLY FUNDED. Now chasing a $40,000 stretch goal.</span>
+    <a href="https://www.kickstarter.com/projects/porchdrop/the-future-of-every-front-door-starts-here" target="_blank" rel="noopener" class="funded-banner-link">Back Us Now →</a>
+  </div>
+</div>
+
 <header class="masthead">
   <div class="masthead-inner">
     <a href="#" class="logo">Porch<span>Drop</span><sup style="font-size:0.5em;font-weight:600;">&reg;</sup></a>
@@ -366,6 +408,10 @@
             <text x="230" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Right Now</text>
           </svg>
         </div></a>
+      </div>
+      <div class="urgency-box reveal">
+        <span class="icon">⏳</span>
+        <p><strong>The $25 Classic tier won't last.</strong> It's the lowest price during this campaign. Once it's gone, the price goes up for the rest of the launch.</p>
       </div>
     </div>
     <div class="proof-card reveal">
