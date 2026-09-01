@@ -13,368 +13,47 @@
 </script>
 <title>PorchDrop: Delivery Culture, Documented</title>
 <meta name="description" content="The everyday chaos of getting stuff delivered to your door: documented, measured, and occasionally fixed by PorchDrop.">
+<meta property="og:title" content="PorchDrop: Delivery Culture, Documented">
+<meta property="og:description" content="UV-resistant, weatherproof, and built for every delivery. Pre-order the first batch now, ships December 2026.">
+<meta property="og:image" content="https://raw.githubusercontent.com/ru058197/myporchdrop-site/main/images/porchdrop-social-card.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://myporchdrop.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PorchDrop: Delivery Culture, Documented">
+<meta name="twitter:description" content="UV-resistant, weatherproof, and built for every delivery. Pre-order the first batch now, ships December 2026.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ru058197/myporchdrop-site/main/images/porchdrop-social-card.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --teal:#1D828D;
-    --teal-dark:#15636C;
-    --orange:#FFAF5E;
-    --orange-dark:#E8923C;
-    --cream:#F5F0E8;
-    --paper:#F3EFE6;
-    --ink:#102523;
-    --ink-soft:#7E938F;
-    --peach:#FBDDC0;
-    --rec:#E2553A;
-    --line: rgba(25,24,28,0.12);
-    --radius: 16px;
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "PorchDrop Classic",
+  "image": "https://raw.githubusercontent.com/ru058197/myporchdrop-site/main/images/product-closeup.jpg",
+  "description": "A patented, UV-resistant, weatherproof porch delivery stand with a modular platform, raised perimeter lip, and embossed PLACE FOOD HERE marker. Holds up to 75 lbs.",
+  "brand": {
+    "@type": "Brand",
+    "name": "PorchDrop"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://myporchdrop.myshopify.com/products/porchdrop-classic",
+    "priceCurrency": "USD",
+    "price": "34.99",
+    "availability": "https://schema.org/PreOrder",
+    "availabilityStarts": "2026-08-31"
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;} }
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Open Sans',sans-serif;
-    font-size:16px;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
-  h1,h2,h3{font-family:'League Spartan',sans-serif;font-weight:800;line-height:1.08;margin:0;letter-spacing:-0.02em;}
-  .eyebrow{
-    font-family:'Open Sans',sans-serif;
-    font-size:0.72rem;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--teal-dark);
-    font-weight:700;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-  }
-  .eyebrow::before{content:"●";color:var(--rec);font-size:0.6rem;}
-
-  /* ---------- MASTHEAD ---------- */
-  header.masthead{
-    position:sticky;top:0;z-index:50;
-    background:var(--cream);
-    border-bottom:1px solid var(--line);
-  }
-  .masthead-inner{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 28px;max-width:1180px;margin:0 auto;
-  }
-  .logo{
-    font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.5rem;
-    text-decoration:none;letter-spacing:-0.02em;
-  }
-  .logo span{color:var(--orange-dark);}
-  nav.primary{display:flex;align-items:center;gap:28px;}
-  nav.primary a{
-    font-family:'Open Sans',sans-serif;font-size:0.78rem;text-transform:uppercase;
-    letter-spacing:0.08em;text-decoration:none;color:var(--ink);font-weight:700;
-    padding-bottom:2px;border-bottom:2px solid transparent;
-  }
-  nav.primary a:hover{border-bottom-color:var(--orange);}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--orange);color:var(--ink);
-    font-family:'Open Sans',sans-serif;font-weight:700;font-size:0.92rem;
-    padding:11px 20px;border-radius:999px;text-decoration:none;
-    border:2px solid var(--ink);
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{transform:translateY(-2px);box-shadow:3px 4px 0 var(--ink);}
-  .btn.ghost{background:transparent;border:2px solid var(--ink);}
-  @media (max-width:760px){
-    nav.primary a.nav-link{display:none;}
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{padding:64px 0 80px;}
-  .hero-grid{
-    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start;
-  }
-  .hero .proof-card{margin-top:6px;}
-  .hero .proof-card img{aspect-ratio:3/4;object-fit:cover;object-position:bottom;}
-  .hero h1{font-size:clamp(2.4rem,4.4vw,3.6rem);margin:18px 0 20px;}
-  .hero h1 mark{background:none;color:var(--teal);}
-  .hero .dek{font-size:1.15rem;color:var(--ink-soft);max-width:520px;margin-bottom:30px;}
-  .hero-ctas{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
-  .text-link{
-    font-family:'Open Sans',sans-serif;font-size:0.85rem;text-decoration:underline;
-    text-decoration-color:var(--orange-dark);font-weight:700;
-  }
-
-  /* ---------- PROOF CARD (signature element) ---------- */
-  .proof-card{
-    position:relative;border-radius:var(--radius);overflow:hidden;
-    background:var(--ink);box-shadow:0 14px 30px -10px rgba(25,24,28,0.35);
-  }
-  .proof-card::before{
-    content:"";position:absolute;top:0;left:0;width:34px;height:34px;
-    background:var(--cream);border-radius:0 0 100% 0;z-index:3;
-  }
-  .proof-card::after{
-    content:"";position:absolute;top:7px;left:7px;width:13px;height:13px;
-    border-radius:50%;border:2px solid var(--ink);z-index:4;
-  }
-  .proof-card img{width:100%;height:100%;object-fit:cover;display:block;}
-  .proof-card .rec-tag{
-    position:absolute;top:10px;right:10px;z-index:4;
-    display:flex;align-items:center;gap:5px;
-    background:rgba(25,24,28,0.55);color:#fff;
-    font-family:'Open Sans',sans-serif;font-size:0.62rem;letter-spacing:0.06em;
-    padding:4px 9px 4px 7px;border-radius:999px;
-  }
-  .rec-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--rec);animation:pulse 1.6s infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
-  .proof-card .stamp{
-    position:absolute;left:0;bottom:0;right:0;z-index:4;
-    background:linear-gradient(0deg, rgba(25,24,28,0.88), rgba(25,24,28,0));
-    color:#fff;padding:26px 16px 12px;
-    font-family:'Open Sans',sans-serif;font-size:0.72rem;letter-spacing:0.04em;
-  }
-  .proof-card .stamp b{display:block;font-size:0.78rem;letter-spacing:0.08em;color:var(--orange);margin-bottom:2px;}
-  .proof-card.is-quote{background:var(--ink);padding:0;}
-  .proof-card.is-quote .stamp-top{
-    position:relative;display:flex;justify-content:space-between;align-items:center;
-    padding:10px 18px 0 40px;
-  }
-  .proof-card.is-quote .stamp-top span{
-    font-family:'Open Sans',sans-serif;font-size:0.7rem;letter-spacing:0.08em;
-    color:var(--orange);text-transform:uppercase;
-  }
-  .proof-card.is-quote blockquote{
-    margin:14px 18px 20px;color:#fff;font-family:'Open Sans',sans-serif;
-    font-size:1.02rem;line-height:1.6;
-  }
-  .proof-card.is-quote footer{
-    margin:0 18px 18px;font-family:'Open Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.6);
-  }
-  .proof-card.is-stat{background:var(--paper);}
-  .proof-card.is-stat .stamp-top{padding:10px 18px 0 40px;}
-  .proof-card.is-stat .stamp-top span{
-    font-family:'Open Sans',sans-serif;font-size:0.68rem;letter-spacing:0.08em;color:var(--teal-dark);text-transform:uppercase;font-weight:700;
-  }
-  .proof-card.is-stat .big{
-    font-family:'League Spartan',sans-serif;font-weight:800;font-size:2.6rem;color:var(--ink);
-    margin:6px 18px 0;line-height:1;
-  }
-  .proof-card.is-stat p{margin:10px 18px 18px;font-size:0.92rem;color:var(--ink-soft);}
-  .proof-card.is-stat .src{
-    margin:0 18px 16px;font-family:'Open Sans',sans-serif;font-size:0.65rem;color:var(--ink-soft);opacity:0.7;
-  }
-
-  .burst{
-    display:inline-block;position:relative;flex-shrink:0;
-    animation:burst-pulse 2.4s ease-in-out infinite;
-  }
-  .burst svg{display:block;}
-  .burst-text{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    text-align:center;font-family:'League Spartan',sans-serif;font-weight:900;
-    font-size:0.8rem;line-height:1.3;letter-spacing:0.03em;text-transform:uppercase;
-    color:var(--ink);padding:18px;
-  }
-  @keyframes burst-pulse{
-    0%,100%{transform:scale(1) rotate(-6deg);}
-    50%{transform:scale(1.06) rotate(-6deg);}
-  }
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-
-  /* ---------- SECTIONS ---------- */
-  section{padding:78px 0;}
-  section.dark{background:var(--ink);color:var(--cream);}
-  section.dark h1,section.dark h2,section.dark h3{color:#FFFFFF;}
-  .section-head{max-width:680px;margin-bottom:42px;}
-  .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-top:14px;}
-  .section-head p{color:var(--ink-soft);font-size:1.05rem;margin-top:14px;}
-  section.dark .section-head p{color:rgba(255,255,255,0.85);}
-  section.dark .eyebrow{color:var(--orange);}
-  section.dark .eyebrow::before{color:var(--orange);}
-
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-  @media (max-width:860px){
-    .hero-grid{grid-template-columns:1fr;}
-    .grid-3{grid-template-columns:1fr;}
-    .grid-2{grid-template-columns:1fr;}
-  }
-
-  .photo-card{border-radius:var(--radius);overflow:hidden;position:relative;background:var(--ink);box-shadow:0 14px 30px -10px rgba(25,24,28,0.3);}
-  .photo-card img{aspect-ratio:4/5;object-fit:cover;width:100%;}
-  .case-tag{
-    position:absolute;top:10px;left:10px;z-index:4;
-    background:rgba(25,24,28,0.6);color:#fff;
-    font-size:0.62rem;letter-spacing:0.06em;font-weight:700;
-    padding:4px 9px;border-radius:999px;text-transform:uppercase;
-  }
-  .ba-label{
-    display:inline-flex;align-items:center;gap:10px;
-    font-size:0.78rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;
-    margin-bottom:18px;
-  }
-  .ba-label.before{color:var(--rec);}
-  .ba-label.after{color:var(--teal-dark);}
-  .ba-label::before{content:"";width:22px;height:2px;background:currentColor;}
-  .ba-block{margin-bottom:56px;}
-  .ba-block:last-child{margin-bottom:0;}
-  .photo-card .cap{
-    padding:14px 16px;background:var(--cream);
-    font-family:'Open Sans',sans-serif;font-size:0.82rem;color:var(--ink);
-  }
-
-  /* ---------- ORIGIN TEASER ---------- */
-  .origin{
-    background:var(--teal);color:#fff;border-radius:24px;padding:50px;
-    display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;
-  }
-  .origin .date-badge{
-    font-family:'Open Sans',sans-serif;background:var(--ink);color:var(--orange);
-    padding:14px 18px;border-radius:12px;font-size:0.85rem;text-align:center;white-space:nowrap;
-  }
-  .origin h3{color:#fff;font-size:1.7rem;margin-bottom:14px;}
-  .origin p{color:rgba(255,255,255,0.88);font-size:1.05rem;max-width:560px;}
-  .origin a{color:var(--orange);font-family:'Open Sans',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;}
-  @media (max-width:700px){.origin{grid-template-columns:1fr;padding:32px;}}
-
-  /* ---------- SPEC SHEET ---------- */
-  .spec-wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;}
-  @media (max-width:860px){.spec-wrap{grid-template-columns:1fr;}}
-  .spec-table{font-family:'Open Sans',sans-serif;font-size:0.92rem;border-top:1px solid var(--line);}
-  .spec-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);gap:20px;}
-  .spec-row .k{color:var(--ink-soft);letter-spacing:0.05em;}
-  .spec-row .v{font-weight:700;text-align:right;}
-  .price-tag{
-    display:flex;align-items:baseline;gap:10px;margin:26px 0 18px;
-  }
-  .price-tag .amt{font-family:'League Spartan',sans-serif;font-weight:800;font-size:2.6rem;}
-  .price-tag .unit{color:var(--ink-soft);font-family:'Open Sans',sans-serif;font-size:0.85rem;}
-
-  /* ---------- FAQ ---------- */
-  .faq-item{
-    border:1px solid rgba(251,250,248,0.12);border-radius:14px;
-    padding:6px 22px;margin-bottom:14px;background:rgba(251,250,248,0.03);
-    transition:background .2s ease, border-color .2s ease;
-  }
-  .faq-item:hover{background:rgba(251,250,248,0.06);border-color:rgba(251,250,248,0.22);}
-  .faq-item summary{
-    font-family:'Open Sans',sans-serif;font-weight:700;font-size:1.05rem;cursor:pointer;
-    list-style:none;display:flex;justify-content:space-between;align-items:center;
-    padding:18px 0;color:#fff;gap:20px;
-  }
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary .icon{
-    flex-shrink:0;width:26px;height:26px;border-radius:50%;
-    border:1.5px solid var(--orange);color:var(--orange);
-    display:flex;align-items:center;justify-content:center;
-    font-size:1.1rem;line-height:1;transition:transform .25s ease;
-  }
-  .faq-item summary .icon::after{content:"+";}
-  .faq-item[open] summary .icon{transform:rotate(45deg);}
-  .faq-item p{color:rgba(255,255,255,0.88);margin:0 0 20px;max-width:680px;line-height:1.6;}
-  .faq-item ul{color:rgba(255,255,255,0.88);margin:0 0 20px;max-width:680px;line-height:1.6;padding-left:20px;}
-  .faq-item ul li{margin-bottom:8px;}
-
-  /* ---------- FUNDED BANNER + URGENCY ---------- */
-  .funded-banner{
-    background:var(--orange);
-    padding:14px 0;
-  }
-  .funded-banner-inner{
-    display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
-  }
-  .funded-banner-text{
-    font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.15rem;
-    color:var(--ink);letter-spacing:0.01em;text-align:center;
-  }
-  .funded-banner-link{
-    font-family:'Open Sans',sans-serif;font-weight:700;font-size:0.85rem;color:#fff;
-    background:var(--ink);padding:9px 20px;border-radius:999px;text-decoration:none;
-    white-space:nowrap;transition:transform .15s ease;
-  }
-  .funded-banner-link:hover{transform:translateY(-2px);}
-  @media (max-width:700px){
-    .funded-banner-text{font-size:0.95rem;}
-    .funded-banner-inner{gap:10px;}
-  }
-  .urgency-box{
-    display:inline-flex;align-items:center;gap:14px;
-    background:var(--ink);color:#fff;
-    padding:16px 22px;border-radius:14px;
-    margin-top:22px;max-width:480px;
-    border-left:5px solid var(--orange);
-  }
-  .urgency-box .icon{font-size:1.6rem;flex-shrink:0;}
-  .urgency-box p{margin:0;font-family:'Open Sans',sans-serif;font-size:0.95rem;line-height:1.5;color:rgba(255,255,255,0.92);}
-  .urgency-box strong{color:var(--orange);font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.02rem;}
-  @media (max-width:500px){.urgency-box{padding:14px 16px;}}
-
-
-  /* ---------- FOOTER ---------- */
-  footer.site-footer{background:var(--ink);color:var(--cream);padding:64px 0 32px;}
-  .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:48px;}
-  @media (max-width:760px){.footer-grid{grid-template-columns:1fr;}}
-  .footer-grid h4{font-family:'Open Sans',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
-  .footer-grid p,.footer-grid a{color:rgba(251,250,248,0.75);font-size:0.92rem;}
-  .subscribe-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
-  .subscribe-row input{
-    flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid rgba(251,250,248,0.25);
-    background:transparent;color:#fff;font-family:'Open Sans',sans-serif;
-  }
-  .subscribe-row input::placeholder{color:rgba(251,250,248,0.45);}
-  .fine-print{border-top:1px solid rgba(251,250,248,0.15);padding-top:24px;font-size:0.8rem;color:rgba(251,250,248,0.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-
-  /* ---------- TODAY'S OBSERVATION ---------- */
-  .observation-card{
-    max-width:640px;margin:0 auto;background:var(--ink);border-radius:var(--radius);
-    padding:30px 32px 26px;position:relative;overflow:hidden;
-    box-shadow:0 14px 30px -10px rgba(25,24,28,0.35);
-  }
-  .observation-card .obs-top{
-    display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;
-  }
-  .observation-card .obs-top span{
-    font-family:'Open Sans',sans-serif;font-size:0.7rem;letter-spacing:0.1em;
-    color:var(--orange);text-transform:uppercase;font-weight:700;
-  }
-  .observation-card .obs-date{color:rgba(251,250,248,0.5)!important;font-weight:500!important;}
-  .observation-card p{
-    color:#fff;font-family:'Open Sans',sans-serif;font-size:1.15rem;line-height:1.55;margin:0;
-  }
-  .observation-card .obs-sub{
-    margin-top:14px;color:rgba(251,250,248,0.55);font-size:0.88rem;
-  }
-
-  /* ---------- PRESS FEATURE ---------- */
-  .press-feature{
-    background:var(--ink);color:#fff;border-radius:24px;padding:40px 50px;
-    display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
-  }
-  .press-feature .press-badge{
-    font-family:'Open Sans',sans-serif;background:var(--orange);color:var(--ink);
-    padding:10px 16px;border-radius:999px;font-size:0.72rem;font-weight:700;
-    letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;display:inline-block;
-  }
-  .press-feature p{color:rgba(255,255,255,0.9);font-family:'Open Sans',sans-serif;font-size:1.05rem;max-width:520px;margin:14px 0 0;}
-  .press-feature a{color:var(--orange);font-family:'Open Sans',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;margin-top:12px;display:inline-block;}
-  @media (max-width:700px){.press-feature{padding:30px;flex-direction:column;align-items:flex-start;}}
-</style>
+}
+</script>
 </head>
 <body>
 
 <div class="funded-banner">
   <div class="wrap funded-banner-inner">
-    <span class="funded-banner-text">FULLY FUNDED. Now chasing a $40,000 stretch goal.</span>
-    <a href="https://www.kickstarter.com/projects/porchdrop/the-future-of-every-front-door-starts-here" target="_blank" rel="noopener" class="funded-banner-link">Back Us Now →</a>
+    <span class="funded-banner-text">PRESALE IS LIVE. First production batch, ships December 2026.</span>
+    <a href="https://myporchdrop.myshopify.com/products/porchdrop-classic" target="_blank" rel="noopener" class="funded-banner-link">Pre-Order Now →</a>
   </div>
 </div>
 
@@ -386,7 +65,7 @@
       <a href="#field-notes" class="nav-link">The Drop</a>
       <a href="#shop" class="nav-link">The Fix</a>
       <a href="the-difference.html" class="nav-link">The Difference</a>
-      <a href="#shop" class="btn">Join the waitlist</a>
+      <a href="#shop" class="btn btn-prominent">Pre-order now</a>
     </nav>
   </div>
 </header>
@@ -395,30 +74,32 @@
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Delivery culture, documented</span>
-      <h1>2,000 deliveries in. Here's everything wrong with your porch.</h1>
-      <p class="dek">This is what we've learned about where your food actually lands: the data, the footage, and the thing we eventually built so the next bag doesn't end up on the ground.</p>
+      <h1>Every delivery ends with a decision you never see.</h1>
+      <p class="dek">The driver reaches your door and has to guess. PorchDrop gives them one obvious answer: an elevated, UV-resistant spot built for exactly this handoff.</p>
       <div class="hero-ctas">
-        <a href="#shop" class="btn">Join the waitlist</a>
+        <a href="#shop" class="btn btn-prominent">Pre-order now</a>
         <a href="#data" class="text-link">See the data ↓</a>
-        <a href="https://www.kickstarter.com/projects/porchdrop/the-future-of-every-front-door-starts-here" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block;cursor:pointer;"><div style="flex-shrink:0;animation:burst-pulse 2.4s ease-in-out infinite;">
+        <a href="https://myporchdrop.myshopify.com/products/porchdrop-classic" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block;cursor:pointer;"><div style="flex-shrink:0;animation:burst-pulse 2.4s ease-in-out infinite;">
           <svg width="200" height="185" viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg">
             <path fill="#1D828D" stroke="#15636C" stroke-width="6" stroke-linejoin="round"
               d="M230,18 L255,80 L300,35 L295,100 L355,68 L330,128 L398,115 L358,165 L425,172 L372,208 L428,235 L365,255 L400,300 L335,298 L345,360 L285,335 L270,395 L230,355 L190,395 L175,335 L115,360 L125,298 L60,300 L95,255 L32,235 L88,208 L35,172 L102,165 L62,115 L130,128 L105,68 L165,100 L160,35 L205,80 Z"/>
-            <text x="230" y="165" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Back Us on</text>
-            <text x="230" y="205" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Kickstarter</text>
+            <text x="230" y="165" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Pre-Order</text>
+            <text x="230" y="205" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">PorchDrop</text>
             <text x="230" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Right Now</text>
           </svg>
         </div></a>
       </div>
       <div class="urgency-box reveal">
         <span class="icon">⏳</span>
-        <p><strong>The $25 Classic tier won't last.</strong> It's the lowest price during this campaign. Once it's gone, the price goes up for the rest of the launch.</p>
+        <p><strong>First production batch, limited quantity.</strong> Once it ships, pricing on future batches is not guaranteed to stay the same.</p>
       </div>
     </div>
     <div class="proof-card reveal">
       <span class="rec-tag"><span class="dot"></span>LIVE CAPTURE</span>
-      <img src="images/after-real-delivery.jpg" alt="A DoorDash bag and an Amazon package resting on the PorchDrop table, delivered hours apart">
-      <div class="stamp"><b>FRONT DOOR · TWO DELIVERIES</b>DoorDash and Amazon, hours apart. Same spot, both times.</div>
+      <video poster="images/hero-delivery-poster.jpg" controls preload="metadata" playsinline style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:#000;">
+        <source src="video/hero-delivery.mp4" type="video/mp4">
+      </video>
+      <div class="stamp"><b>THE HANDOFF</b>Every porch is different. Every driver has to guess, unless there's one obvious spot.</div>
     </div>
   </div>
 </section>
@@ -432,7 +113,7 @@
         <a href="https://www.homecrux.com/porchdrop-protects-food-deliveries-at-your-doorstep/403687/" target="_blank" rel="noopener">Read the feature →</a>
       </div>
       <div style="background:#fff;border-radius:14px;padding:16px 22px;flex-shrink:0;">
-        <img src="images/logo-homecrux.png" alt="Homecrux logo" style="display:block;height:28px;width:auto;">
+        <img loading="lazy" src="images/logo-homecrux.png" alt="Homecrux logo" style="display:block;height:28px;width:auto;">
       </div>
     </div>
   </div>
@@ -447,10 +128,10 @@
     </div>
     <div class="grid-3">
       <div class="proof-card is-stat reveal">
-        <div class="stamp-top"><span>Data · Q1 2026</span></div>
-        <div class="big">933M</div>
+        <div class="stamp-top"><span>Data · Q2 2026</span></div>
+        <div class="big">970M</div>
         <p>orders placed on DoorDash in a single quarter, up 27% year over year.</p>
-        <div class="src">SOURCE: DOORDASH Q1 2026 EARNINGS</div>
+        <div class="src">SOURCE: DOORDASH Q2 2026 EARNINGS</div>
       </div>
       <div class="proof-card is-stat reveal">
         <div class="stamp-top"><span>Data · Dasher Interviews</span></div>
@@ -496,14 +177,14 @@
     <div class="grid-2">
       <div class="proof-card is-quote reveal">
         <div class="stamp-top"><span>Dash Cam · Car Rant Vol. 1</span></div>
-        <video controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
+        <video poster="images/car-rant-1-poster.jpg" controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
           <source src="video/car-rant-1.mp4" type="video/mp4">
         </video>
         <footer>Recorded in the car, rainy season, 2026</footer>
       </div>
       <div class="proof-card is-quote reveal">
         <div class="stamp-top"><span>Dash Cam · Car Rant Vol. 2</span></div>
-        <video controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
+        <video poster="images/car-rant-2-poster.jpg" controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
           <source src="video/car-rant-2.mp4" type="video/mp4">
         </video>
         <footer>Recorded in the car, between drops, 2026</footer>
@@ -525,17 +206,17 @@
       <div class="grid-3">
         <div class="photo-card reveal">
           <span class="case-tag">Delivery #0417</span>
-          <img src="images/problem-1.jpg" alt="A delivery bag and coffee cup left directly on a brick porch floor by the front door">
+          <img loading="lazy" src="images/problem-1.jpg" alt="A delivery bag and coffee cup left directly on a brick porch floor by the front door">
           <div class="cap">Front entrance.<br>Bare brick.<br>No mat, no table, just the ground.</div>
         </div>
         <div class="photo-card reveal">
           <span class="case-tag">Delivery #0418</span>
-          <img src="images/problem-2.jpg" alt="A small package left in a dirty concrete corner at a business entrance">
+          <img loading="lazy" src="images/problem-2.jpg" alt="A small package left in a dirty concrete corner at a business entrance">
           <div class="cap">Office entrance.<br>Concrete corner.<br>Filed under "good enough."</div>
         </div>
         <div class="photo-card reveal">
           <span class="case-tag">Delivery #0419</span>
-          <img src="images/problem-3.jpg" alt="A takeout bag and drink leaning against a glass office storefront door">
+          <img loading="lazy" src="images/problem-3.jpg" alt="A takeout bag and drink leaning against a glass office storefront door">
           <div class="cap">Lunch.<br>Concrete.<br>Office. Again.</div>
         </div>
       </div>
@@ -546,21 +227,21 @@
       <div class="grid-3">
         <div class="proof-card reveal">
           <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
-          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+          <video poster="images/ring-1-poster.jpg" controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
             <source src="video/ring-1.mp4" type="video/mp4">
           </video>
           <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>MAY 25 · 7:06 AM</b>Driver arrives. Looks once. Places order. Leaves.</div>
         </div>
         <div class="proof-card reveal">
           <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
-          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+          <video poster="images/ring-2-poster.jpg" controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
             <source src="video/ring-2.mp4" type="video/mp4">
           </video>
           <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>MAY 27 · 5:23 PM</b>Two days later. Different driver. Same instinct.</div>
         </div>
         <div class="proof-card reveal">
           <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
-          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+          <video poster="images/ring-3-poster.jpg" controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
             <source src="video/ring-3.mp4" type="video/mp4">
           </video>
           <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>JUL 6 · 12:23 PM</b>Midday, no exception. Bag goes on the table, driver's already walking away.</div>
@@ -585,36 +266,37 @@
 
 <section id="shop">
   <div class="wrap spec-wrap">
-    <img src="images/product-closeup.jpg" alt="Close-up of PorchDrop's PLACE FOOD HERE embossed tabletop" style="border-radius:var(--radius);box-shadow:0 14px 30px -10px rgba(25,24,28,0.3);">
+    <img loading="lazy" src="images/product-closeup.jpg" alt="Close-up of PorchDrop's PLACE FOOD HERE embossed tabletop" style="border-radius:var(--radius);box-shadow:0 14px 30px -10px rgba(25,24,28,0.3);">
     <div class="reveal">
       <span class="eyebrow">The fix</span>
       <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem);">A clean, elevated, hard-to-miss landing spot.</h2>
       <p style="color:var(--ink-soft);margin-top:14px;">Designed with one job: give every driver an obvious, clean place to set things down: off the ground, off the mat, away from whatever's living in the mulch.</p>
-      <div class="price-tag"><span class="amt">$29.99</span><span class="unit">planned price · patent pending</span></div>
+      <div class="price-tag"><span class="amt">$34.99</span><span class="unit">presale price · patent pending</span></div>
       <div class="spec-table">
         <div class="spec-row"><span class="k">HOLDS</span><span class="v">UP TO 75 LBS</span></div>
-        <div class="spec-row"><span class="k">SURFACE</span><span class="v">Weatherproof, easy-clean</span></div>
-        <div class="spec-row"><span class="k">LEGS</span><span class="v">Removable</span></div>
+        <div class="spec-row"><span class="k">SURFACE</span><span class="v">UV-resistant, weatherproof HDPE</span></div>
+        <div class="spec-row"><span class="k">SYSTEM</span><span class="v">Modular. Removable legs, built for future accessories</span></div>
         <div class="spec-row"><span class="k">LIP</span><span class="v">Raised perimeter, nothing slides off</span></div>
         <div class="spec-row"><span class="k">MARKER</span><span class="v">"PLACE FOOD HERE," driver-visible</span></div>
       </div>
-      <p style="color:var(--ink-soft);font-size:0.9rem;margin-top:22px;">We're a few weeks out from relaunching. Leave your email and we'll let you know the moment backing opens, no spam, just the launch date.</p>
+      <p style="color:var(--ink-soft);font-size:0.9rem;margin-top:22px;">This is a presale, not an off-the-shelf order. First production batch ships December 2026.</p>
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:14px;">
-        <form action="https://myporchdrop.us15.list-manage.com/subscribe/post?u=5f2ee32a6f1c39ecd1f77d104&amp;id=20f4992905&amp;f_id=00b9c2e1f0" method="post" target="_blank" novalidate class="subscribe-row" style="max-width:420px;">
-          <input type="email" name="EMAIL" placeholder="you@email.com" required style="flex:1;min-width:180px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:'Open Sans',sans-serif;">
-          <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_5f2ee32a6f1c39ecd1f77d104_20f4992905" tabindex="-1" value=""></div>
-          <button type="submit" class="btn" style="border:none;cursor:pointer;">Notify me</button>
-        </form>
-        <a href="https://www.kickstarter.com/projects/porchdrop/the-future-of-every-front-door-starts-here" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block;cursor:pointer;"><div style="flex-shrink:0;animation:burst-pulse 2.4s ease-in-out infinite;">
-          <svg width="185" height="170" viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#1D828D" stroke="#15636C" stroke-width="6" stroke-linejoin="round"
-              d="M230,18 L255,80 L300,35 L295,100 L355,68 L330,128 L398,115 L358,165 L425,172 L372,208 L428,235 L365,255 L400,300 L335,298 L345,360 L285,335 L270,395 L230,355 L190,395 L175,335 L115,360 L125,298 L60,300 L95,255 L32,235 L88,208 L35,172 L102,165 L62,115 L130,128 L105,68 L165,100 L160,35 L205,80 Z"/>
-            <text x="230" y="165" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Back Us on</text>
-            <text x="230" y="205" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Kickstarter</text>
-            <text x="230" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="white">Right Now</text>
-          </svg>
-        </div></a>
+        <a href="https://myporchdrop.myshopify.com/products/porchdrop-classic" target="_blank" rel="noopener" class="btn btn-prominent">Pre-order now · $34.99</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who built this</span>
+      <h2>Built by someone who actually did the deliveries.</h2>
+    </div>
+    <div class="reveal">
+      <p style="color:var(--ink-soft);font-size:1.05rem;">PorchDrop didn't come from a boardroom. It came from over 2,000 DoorDash deliveries, a lot of soggy bags, and one too many "sorry, I couldn't find a good spot" texts.</p>
+      <p style="color:var(--ink-soft);font-size:1.05rem;">Every porch is a little different. Every driver is guessing. PorchDrop removes the guessing: one obvious, elevated spot, built UV-resistant and weatherproof to handle whatever gets left there, in whatever Florida throws at it.</p>
+      <p style="color:var(--ink-soft);font-size:1.05rem;margin-bottom:0;">Patent pending. Trademark registered. Designed in Florida.</p>
     </div>
   </div>
 </section>
@@ -636,7 +318,7 @@
       </details>
       <details class="faq-item">
         <summary>What's it made of?<span class="icon"></span></summary>
-        <p>A weatherproof, easy-clean material chosen specifically to hold up to sun, rain, and daily use without breaking down. Not your average plastic patio table.</p>
+        <p>UV-resistant, weatherproof HDPE (high-density polyethylene), chosen specifically to hold up to direct sun, rain, and daily use without breaking down. Not your average plastic patio table.</p>
       </details>
       <details class="faq-item">
         <summary>Is this just for food delivery?<span class="icon"></span></summary>
