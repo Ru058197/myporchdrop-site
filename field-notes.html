@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHN7HHW81Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DHN7HHW81Y');
+</script>
+<title>Field Notes | PorchDrop</title>
+<meta name="description" content="Field notes from the front seat and beyond: everything we're learning about deliveries, porches, and the stuff that goes wrong between them.">
+<meta property="og:title" content="Field Notes | PorchDrop">
+<meta property="og:description" content="Field notes from the front seat and beyond: everything we're learning about deliveries, porches, and the stuff that goes wrong between them.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://myporchdrop.com/field-notes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .fn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;margin-top:40px;}
+  .fn-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 14px 30px -10px rgba(25,24,28,0.15);text-decoration:none;color:var(--ink);display:block;transition:transform .2s ease;}
+  .fn-card:hover{transform:translateY(-4px);}
+  .fn-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--stone,#7E938F);}
+  .fn-card-body{padding:20px 22px 24px;}
+  .fn-card-date{font-family:'Open Sans',sans-serif;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);margin-bottom:8px;display:block;}
+  .fn-card h3{font-family:'League Spartan',sans-serif;font-size:1.25rem;font-weight:700;margin:0 0 10px;line-height:1.25;}
+  .fn-card p{font-family:'Open Sans',sans-serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;margin:0;}
+  .fn-state{font-family:'Open Sans',sans-serif;color:var(--ink-soft);margin-top:40px;}
+</style>
+</head>
+<body>
+
+<div class="funded-banner">
+  <div class="wrap funded-banner-inner">
+    <span class="funded-banner-text">PRESALE IS LIVE. First production batch, ships December 2026.</span>
+    <a href="https://myporchdrop.myshopify.com/products/porchdrop-classic" target="_blank" rel="noopener" class="funded-banner-link">Pre-Order Now →</a>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="logo">Porch<span>Drop</span><sup style="font-size:0.5em;font-weight:600;">&reg;</sup></a>
+    <nav class="primary">
+      <a href="index.html#data" class="nav-link">The Data</a>
+      <a href="index.html#field-notes" class="nav-link">The Drop</a>
+      <a href="index.html#shop" class="nav-link">The Fix</a>
+      <a href="the-difference.html" class="nav-link">The Difference</a>
+      <a href="index.html#shop" class="btn btn-prominent">Pre-order now</a>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <div class="wrap" style="max-width:900px;">
+    <div class="section-head reveal in">
+      <span class="eyebrow">The drop</span>
+      <h2>Field notes.</h2>
+      <p>Everything we're learning about deliveries, porches, and the stuff that goes wrong between them. Some of this is dash cam footage. Some of it's written up. Same notebook either way.</p>
+    </div>
+
+    <div id="fn-loading" class="fn-state">Loading field notes…</div>
+    <div id="fn-error" class="fn-state" style="display:none;">Couldn't load field notes right now. <a href="https://myporchdrop.myshopify.com/blogs/field-notes" target="_blank" rel="noopener">Try reading them directly on the store →</a></div>
+    <div id="fn-grid" class="fn-grid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color:#fff;">Porch<span>Drop</span><sup style="font-size:0.5em;font-weight:600;">&reg;</sup></a>
+        <p style="margin-top:14px;max-width:280px;">A smarter, cleaner place for your delivery to land. Built by someone who's actually carried your food up the driveway, about 2,000 times now.</p>
+      </div>
+      <div>
+        <h4>The Drop</h4>
+        <p><a href="index.html#data">The Data</a></p>
+        <p><a href="index.html#observation">Today's Observation</a></p>
+        <p><a href="field-notes.html">Field Notes</a></p>
+        <p><a href="origin-story.html">Origin Story</a></p>
+        <p><a href="the-difference.html">The Difference</a></p>
+      </div>
+      <div>
+        <h4>Subscribe</h4>
+        <p>New data, new field notes, no spam.</p>
+        <form action="https://myporchdrop.us15.list-manage.com/subscribe/post?u=5f2ee32a6f1c39ecd1f77d104&amp;id=20f4992905&amp;f_id=00b9c2e1f0" method="post" target="_blank" novalidate class="subscribe-row">
+          <input type="email" name="EMAIL" placeholder="you@email.com" required>
+          <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_5f2ee32a6f1c39ecd1f77d104_20f4992905" tabindex="-1" value=""></div>
+          <button type="submit" class="btn" style="border:2px solid var(--ink);cursor:pointer;">Join</button>
+        </form>
+      </div>
+    </div>
+    <div style="display:flex;gap:20px;align-items:center;margin-bottom:28px;flex-wrap:wrap;">
+      <a href="https://www.facebook.com/PorchDropOfficial" target="_blank" rel="noopener" title="Facebook" style="color:rgba(251,250,248,0.7);transition:color .2s;" onmouseover="this.style.color='#FFAF5E'" onmouseout="this.style.color='rgba(251,250,248,0.7)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/myporchdrop/" target="_blank" rel="noopener" title="Instagram" style="color:rgba(251,250,248,0.7);transition:color .2s;" onmouseover="this.style.color='#FFAF5E'" onmouseout="this.style.color='rgba(251,250,248,0.7)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@myporchdrop" target="_blank" rel="noopener" title="TikTok" style="color:rgba(251,250,248,0.7);transition:color .2s;" onmouseover="this.style.color='#FFAF5E'" onmouseout="this.style.color='rgba(251,250,248,0.7)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.16 8.16 0 0 0 4.77 1.52V6.75a4.85 4.85 0 0 1-1-.06z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@PorchDrop" target="_blank" rel="noopener" title="YouTube" style="color:rgba(251,250,248,0.7);transition:color .2s;" onmouseover="this.style.color='#FFAF5E'" onmouseout="this.style.color='rgba(251,250,248,0.7)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/porchdrop/" target="_blank" rel="noopener" title="LinkedIn" style="color:rgba(251,250,248,0.7);transition:color .2s;" onmouseover="this.style.color='#FFAF5E'" onmouseout="this.style.color='rgba(251,250,248,0.7)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="fine-print">
+      <span>© 2026 PorchDrop · Patent pending · Registered trademark</span>
+      <span>Tampa, FL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(async function() {
+  const endpoint = "https://myporchdrop.myshopify.com/api/2025-04/graphql.json";
+  const query = `{
+    blog(handle: "field-notes") {
+      title
+      articles(first: 20, sortKey: PUBLISHED_AT, reverse: true) {
+        edges {
+          node {
+            title
+            handle
+            excerpt(truncateAt: 160)
+            publishedAt
+            image { url altText }
+          }
+        }
+      }
+    }
+  }`;
+
+  const loadingEl = document.getElementById('fn-loading');
+  const errorEl = document.getElementById('fn-error');
+  const gridEl = document.getElementById('fn-grid');
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query })
+    });
+    const data = await res.json();
+
+    if (data.errors || !data.data || !data.data.blog) {
+      throw new Error('No blog data returned');
+    }
+
+    const articles = data.data.blog.articles.edges;
+    loadingEl.style.display = 'none';
+
+    if (articles.length === 0) {
+      gridEl.innerHTML = '<p class="fn-state">No field notes posted yet. Check back soon.</p>';
+      return;
+    }
+
+    articles.forEach(({ node }) => {
+      const date = new Date(node.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      const imgUrl = node.image ? node.image.url : 'images/product-closeup.jpg';
+      const imgAlt = node.image ? node.image.altText || node.title : node.title;
+
+      const card = document.createElement('a');
+      card.href = `field-notes-post.html?handle=${encodeURIComponent(node.handle)}`;
+      card.className = 'fn-card';
+      card.innerHTML = `
+        <img src="${imgUrl}" alt="${imgAlt.replace(/"/g, '&quot;')}" loading="lazy">
+        <div class="fn-card-body">
+          <span class="fn-card-date">${date}</span>
+          <h3>${node.title}</h3>
+          <p>${node.excerpt || ''}</p>
+        </div>
+      `;
+      gridEl.appendChild(card);
+    });
+  } catch (err) {
+    loadingEl.style.display = 'none';
+    errorEl.style.display = 'block';
+    console.error('Field Notes fetch error:', err);
+  }
+})();
+</script>
+
+</body>
+</html>
