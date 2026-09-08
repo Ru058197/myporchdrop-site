@@ -12,6 +12,7 @@
   gtag('config', 'G-DHN7HHW81Y');
 </script>
 <title id="fn-title-tag">Field Notes | PorchDrop</title>
+<link id="fn-canonical" rel="canonical" href="https://myporchdrop.com/field-notes.html">
 <meta id="fn-desc-tag" name="description" content="Field notes from PorchDrop.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,6 +146,7 @@
 
     document.getElementById('fn-title-tag').textContent = (article.seo && article.seo.title) || article.title + ' | PorchDrop';
     document.getElementById('fn-desc-tag').setAttribute('content', (article.seo && article.seo.description) || '');
+    document.getElementById('fn-canonical').setAttribute('href', 'https://myporchdrop.com/field-notes-post.html?handle=' + encodeURIComponent(handle));
     document.getElementById('fn-heading').textContent = article.title;
     document.getElementById('fn-date').textContent = new Date(article.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
     document.getElementById('fn-body').innerHTML = article.contentHtml;

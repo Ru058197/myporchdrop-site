@@ -12,6 +12,7 @@
   gtag('config', 'G-DHN7HHW81Y');
 </script>
 <title>PorchDrop: Delivery Culture, Documented</title>
+<link rel="canonical" href="https://myporchdrop.com/">
 <meta name="description" content="The everyday chaos of getting stuff delivered to your door: documented, measured, and occasionally fixed by PorchDrop.">
 <meta property="og:title" content="PorchDrop: Delivery Culture, Documented">
 <meta property="og:description" content="UV-resistant, weatherproof, and built for every delivery. Pre-order the first batch now, ships December 2026.">
@@ -43,7 +44,43 @@
     "priceCurrency": "USD",
     "price": "34.99",
     "availability": "https://schema.org/PreOrder",
-    "availabilityStarts": "2026-08-31"
+    "availabilityStarts": "2026-08-31",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "8.00",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 5,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/ReturnShippingFees",
+      "refundType": "https://schema.org/FullRefund"
+    }
   }
 }
 </script>
