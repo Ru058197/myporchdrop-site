@@ -322,6 +322,11 @@
   .funded-banner-link{font-family:'Open Sans',sans-serif;font-weight:700;font-size:0.85rem;color:#fff;background:var(--ink);padding:9px 20px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:transform .15s ease;}
   .funded-banner-link:hover{transform:translateY(-2px);}
   @media (max-width:700px){.funded-banner-text{font-size:0.95rem;}.funded-banner-inner{gap:10px;}}
+  .press-feature{background:var(--ink);color:#fff;border-radius:24px;padding:40px 50px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+  .press-feature .press-badge{font-family:'Open Sans',sans-serif;background:var(--orange);color:var(--ink);padding:10px 16px;border-radius:999px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;display:inline-block;}
+  .press-feature p{color:rgba(255,255,255,0.9);font-family:'Open Sans',sans-serif;font-size:1.05rem;max-width:520px;margin:14px 0 0;}
+  .press-feature a{color:var(--orange);font-family:'Open Sans',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;margin-top:12px;display:inline-block;}
+  @media (max-width:700px){.press-feature{padding:30px;flex-direction:column;align-items:flex-start;}}
 </style>
 </head>
 <body>
@@ -385,10 +390,10 @@
     </div>
     <div class="grid-3">
       <div class="proof-card is-stat reveal">
-        <div class="stamp-top"><span>Data · Q1 2026</span></div>
-        <div class="big">933M</div>
+        <div class="stamp-top"><span>Data · Q2 2026</span></div>
+        <div class="big">970M</div>
         <p>orders placed on DoorDash in a single quarter, up 27% year over year.</p>
-        <div class="src">SOURCE: DOORDASH Q1 2026 EARNINGS</div>
+        <div class="src">SOURCE: DOORDASH Q2 2026 EARNINGS</div>
       </div>
       <div class="proof-card is-stat reveal">
         <div class="stamp-top"><span>Data · Dasher Interviews</span></div>
@@ -400,7 +405,22 @@
         <div class="stamp-top"><span>Data · Daily</span></div>
         <div class="big">10M+</div>
         <p>orders happen on DoorDash every single day. Some land on a PorchDrop. Most still land on the ground.</p>
-        <div class="src">SOURCE: DERIVED FROM DOORDASH Q1 2026 EARNINGS</div>
+        <div class="src">SOURCE: DERIVED FROM DOORDASH Q2 2026 EARNINGS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="press-feature reveal">
+      <div>
+        <span class="press-badge">As Seen In</span>
+        <p>Homecrux, on the low-tech fix they didn't expect from a former DoorDash driver.</p>
+        <a href="https://www.homecrux.com/porchdrop-protects-food-deliveries-at-your-doorstep/403687/" target="_blank" rel="noopener">Read the feature →</a>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:16px 22px;flex-shrink:0;">
+        <img src="images/homecrux-logo.png" alt="Homecrux logo" style="display:block;height:28px;width:auto;">
       </div>
     </div>
   </div>
@@ -496,10 +516,12 @@
           </video>
           <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>MAY 27 · 5:23 PM</b>Two days later. Different driver. Same instinct.</div>
         </div>
-        <div class="photo-card reveal">
-          <span class="case-tag" style="background:rgba(29,130,141,0.85);">Resolved</span>
-          <img src="images/after-real-delivery.jpg" alt="A delivery bag and package resting on the PorchDrop table instead of the porch floor" style="object-position:top;">
-          <div class="cap">Not just food.<br>Whatever shows up, shows up here.<br>Off the ground, every time.</div>
+        <div class="proof-card reveal">
+          <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
+          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <source src="video/ring-3.mp4" type="video/mp4">
+          </video>
+          <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>FRONT DOOR</b>Not just food. Whatever shows up, shows up here.</div>
         </div>
       </div>
     </div>
