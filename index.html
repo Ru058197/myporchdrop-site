@@ -338,6 +338,54 @@
   .press-feature a{color:var(--orange);font-family:'Open Sans',sans-serif;font-weight:700;text-decoration:underline;font-size:0.9rem;margin-top:12px;display:inline-block;}
   @media (max-width:700px){.press-feature{padding:30px;flex-direction:column;align-items:flex-start;}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "PorchDrop Classic",
+  "description": "A UV-resistant, weatherproof porch delivery stand that keeps food and packages off the ground.",
+  "brand": {
+    "@type": "Brand",
+    "name": "PorchDrop"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://myporchdrop.myshopify.com/products/porchdrop-classic",
+    "priceCurrency": "USD",
+    "price": "34.99",
+    "availability": "https://schema.org/PreOrder",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "8.00",
+        "currency": "USD"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 5,
+          "unitCode": "DAY"
+        }
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/ReturnShippingFees",
+      "applicableCountry": "US"
+    }
+  }
+}
+</script>
 </head>
 <body>
 
@@ -464,19 +512,20 @@
     <div class="grid-2">
       <div class="proof-card is-quote reveal">
         <div class="stamp-top"><span>Dash Cam · Car Rant Vol. 1</span></div>
-        <video controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
+        <video controls preload="metadata" playsinline poster="images/car-rant-1-poster.jpg" style="width:100%;display:block;margin-top:10px;background:#000;">
           <source src="video/car-rant-1.mp4" type="video/mp4">
         </video>
         <footer>Recorded in the car, rainy season, 2026</footer>
       </div>
       <div class="proof-card is-quote reveal">
         <div class="stamp-top"><span>Dash Cam · Car Rant Vol. 2</span></div>
-        <video controls preload="metadata" playsinline style="width:100%;display:block;margin-top:10px;background:#000;">
+        <video controls preload="metadata" playsinline poster="images/car-rant-2-poster.jpg" style="width:100%;display:block;margin-top:10px;background:#000;">
           <source src="video/car-rant-2.mp4" type="video/mp4">
         </video>
         <footer>Recorded in the car, between drops, 2026</footer>
       </div>
     </div>
+    <p style="margin-top:36px;"><a href="field-notes.html" class="text-link">Read more field notes →</a></p>
   </div>
 </section>
 
@@ -514,21 +563,21 @@
       <div class="grid-3">
         <div class="proof-card reveal">
           <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
-          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+          <video controls preload="metadata" playsinline poster="images/ring-1-poster.jpg" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
             <source src="video/ring-1.mp4" type="video/mp4">
           </video>
           <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>MAY 25 · 7:06 AM</b>Driver arrives. Looks once. Places order. Leaves.</div>
         </div>
         <div class="proof-card reveal">
           <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
-          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+          <video controls preload="metadata" playsinline poster="images/ring-2-poster.jpg" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
             <source src="video/ring-2.mp4" type="video/mp4">
           </video>
           <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>MAY 27 · 5:23 PM</b>Two days later. Different driver. Same instinct.</div>
         </div>
         <div class="proof-card reveal">
           <span class="rec-tag"><span class="dot"></span>RING · FRONT DOOR</span>
-          <video controls preload="metadata" playsinline style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+          <video controls preload="metadata" playsinline poster="images/ring-3-poster.jpg" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
             <source src="video/ring-3.mp4" type="video/mp4">
           </video>
           <div class="stamp" style="position:relative;background:none;padding:14px 16px;"><b>FRONT DOOR</b>Not just food. Whatever shows up, shows up here.</div>
