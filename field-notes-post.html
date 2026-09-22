@@ -31,6 +31,7 @@
   .fn-article-body img{max-width:100%;border-radius:12px;margin:24px 0;}
   .fn-article-body a{color:var(--teal-dark);}
   .fn-state{font-family:'Open Sans',sans-serif;color:var(--ink-soft);}
+  @media (max-width:760px){nav.primary{display:none;}}
 </style>
 </head>
 <body>
@@ -46,12 +47,20 @@
   <div class="masthead-inner">
     <a href="index.html" class="logo">Porch<span>Drop</span><sup style="font-size:0.5em;font-weight:600;">&reg;</sup></a>
     <nav class="primary">
-      <a href="index.html#data" class="nav-link">The Data</a>
-      <a href="index.html#field-notes" class="nav-link">The Drop</a>
+      <a href="field-notes.html" class="nav-link">The Drop</a>
       <a href="index.html#shop" class="nav-link">The Fix</a>
       <a href="the-difference.html" class="nav-link">The Difference</a>
-      <a href="index.html#shop" class="btn btn-prominent">Pre-order now</a>
+      <a href="https://myporchdrop.myshopify.com/products/porchdrop-classic" target="_blank" rel="noopener" class="btn btn-prominent">Pre-order now</a>
     </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="field-notes.html">The Drop</a>
+    <a href="index.html#shop">The Fix</a>
+    <a href="the-difference.html">The Difference</a>
+    <a href="https://myporchdrop.myshopify.com/products/porchdrop-classic" target="_blank" rel="noopener" class="btn btn-prominent">Pre-order now</a>
   </div>
 </header>
 
@@ -80,8 +89,7 @@
       </div>
       <div>
         <h4>The Drop</h4>
-        <p><a href="index.html#data">The Data</a></p>
-        <p><a href="index.html#observation">Today's Observation</a></p>
+        <p><a href="field-notes.html#observation">Today's Observation</a></p>
         <p><a href="field-notes.html">Field Notes</a></p>
         <p><a href="origin-story.html">Origin Story</a></p>
         <p><a href="the-difference.html">The Difference</a></p>
@@ -166,6 +174,15 @@
     console.error('Field Notes article fetch error:', err);
   }
 })();
+</script>
+
+<script>
+  function toggleMobileMenu(){
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburgerBtn');
+    const isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
 </script>
 
 </body>
